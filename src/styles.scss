@@ -19,6 +19,7 @@ $pc-secondary: map-get($preset-colors, 'preset-1', 'secondary');
 @import 'scss/settings/theme-variables';
 
 @import 'node_modules/bootstrap/scss/bootstrap';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 // main framework
 @import 'scss/themes/generic';
 @import 'scss/themes/general';

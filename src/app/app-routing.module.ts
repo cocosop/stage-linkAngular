@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './theme/layout/admin/admin.component';
 import { GuestComponent } from './theme/layout/guest/guest.component';
@@ -25,10 +25,10 @@ const routes: Routes = [
         path: 'etudiant',
         loadComponent: () => import('./components/etudiant/etudiants.component')
       },
-      {
-        path: 'stages',
-        loadComponent: () => import('./components/stages/stages.component')
-      },
+     {
+      path: 'stages',
+      loadComponent:() => import('./components/stages/stages.component')
+     },
       {
         path: 'entreprises',
         loadComponent: () => import('./components/entreprises/entreprises.component')
@@ -41,7 +41,25 @@ const routes: Routes = [
       {
         path: 'forum',
         loadComponent: () => import('./components/forum/forum.component')
+      },
+
+      {
+        path:'addstage',
+        loadChildren: () => import('./components/addstage/addstage.component')
+      },
+
+      {
+        path:'stagedetails',
+        loadComponent: () => import('./components/stagedetails/stagedetails.component')
+        
+      },
+
+      {
+        path:'addpostulation',
+        loadComponent: () => import('./components/addpostulation/addpostulation.component')
+        
       }
+     
     ]
   },
   {

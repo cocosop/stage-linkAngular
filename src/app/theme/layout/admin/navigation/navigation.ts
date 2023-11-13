@@ -21,7 +21,7 @@ const NavigationItems = [
     id: 'accueil',
     title: 'Accueil',
     type: 'group',
-    icon: 'icon-navigation',
+    // icon: 'icon-navigation',
     children: [
       {
         id: 'dashbord',
@@ -32,9 +32,11 @@ const NavigationItems = [
         icon: 'ti ti-dashboard',
         breadcrumbs: false
       },
+
+      
       {
-        id: 'stage',
-        title: 'Stages',
+        id: 'stages',
+        title: 'Intership',
         type: 'item',
         classes: 'nav-item',
         url: '/stages',
@@ -42,7 +44,7 @@ const NavigationItems = [
       },
       {
         id: 'postulation',
-        title: 'Postulations',
+        title: 'Applications',
         type: 'item',
         classes: 'nav-item',
         url: '/postulations',
@@ -50,7 +52,7 @@ const NavigationItems = [
       },
       {
         id: 'Entreprise',
-        title: 'Entreprises',
+        title: 'Company',
         type: 'item',
         classes: 'nav-item',
         url: '/entreprises',
@@ -59,7 +61,7 @@ const NavigationItems = [
       
       {
         id: 'Etudiant',
-        title: 'Etudiants',
+        title: 'Students',
         type: 'item',
         url: '/etudiant',
         classes: 'nav-item',
@@ -106,6 +108,22 @@ const NavigationItems = [
           }
         ]
       }
+    ]
+  },
+
+  {
+    id: 'card',
+    title: 'card',
+    type: 'groupe',
+    icon: 'icon-navigation',
+    children: [
+      {
+        id: 'stagedetails',
+        title: 'voir plus...',
+        type: 'item',
+        url: '/stagedetails',
+       
+      },
     ]
   },
  
