@@ -55,7 +55,7 @@ const routes: Routes = [
       },
 
       {
-        path:'addpostulation',
+        path:'addpostulation/:id',
         loadComponent: () => import('./components/addpostulation/addpostulation.component')
         
       }

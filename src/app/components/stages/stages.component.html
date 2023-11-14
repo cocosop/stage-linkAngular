@@ -2,6 +2,7 @@
 <div>
   <button mat-raised-button (click)="openDialog('0ms', '0ms')">Add Intership</button>
 </div>
+
 <div class="app-wrapper" >     
     <mat-card class="example-card"*ngFor="let item of allStages" >
       <mat-card-header>
@@ -21,8 +22,9 @@
       </mat-card-content>
       <mat-card-actions>
         <button mat-raised-button (click)="openDialog('0ms', '0ms')" color="primary">Apply</button>
-        <a [routerLink]="['/stagedetails']"class="card-link">voir plus...</a>
+        <a [routerLink]="['/stagedetails',item.id]" class="card-link">voir plus...</a>
       </mat-card-actions>
+      <app-element-color></app-element-color>
     </mat-card>
   
 </div>

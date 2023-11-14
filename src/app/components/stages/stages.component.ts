@@ -35,9 +35,10 @@ import AddpostulationComponent from '../addpostulation/addpostulation.component'
 
 export default class StagesComponents implements OnInit {
   allStages:StageModel[] = []; 
+
   constructor(public dialog: MatDialog, private stage: StageServicesService ) {}
   ngOnInit(): void {
-    this.getApi()
+    this.getApi();
   }
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
@@ -56,8 +57,11 @@ export default class StagesComponents implements OnInit {
   getApi(){
     this.stage.get()
     .subscribe((data)=>{
-      this.allStages = data;    })
+      this.allStages = data
+      this.stage.get().forEach })
   }
+
+  
  
 }
 
