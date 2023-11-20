@@ -1,18 +1,17 @@
-.example-card {
-  max-width: 200px;
-  margin: 5px;
-  height: 200px;
-
+.example-card{
+    margin: 5%;
+    margin-top: 1px;
+    margin-left: 12px;
+    width: 25%;
+    text-align: left;
+    height:auto;
+    // align-items: center;
 }
 
-.app-wrapper {
-  margin: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.app-wrapper{
+    
+    margin-left: 52px;
+    display: flex;
+    flex-wrap: wrap;
+    
 }
-
-// .content {
-//   display: grid;
-//   grid-gap: 70px;
-// }

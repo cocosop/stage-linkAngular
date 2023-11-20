@@ -1,67 +1,53 @@
-import { Component, Injectable, AfterViewInit, ViewChild, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
-import { HttpClient } from '@angular/common/http';
-import { StageServicesService } from './stage.services.service';
-import { StageModel } from './models';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import { StagesService } from './stages.service';
+import { StagesModel } from './stages-model';
 import {MatIconModule} from '@angular/material/icon';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatDialog, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
-import { RouterLink } from '@angular/router';
-import AddstageComponent from './../addstage/addstage.component'
-import StagedetailsComponent from '../stagedetails/stagedetails.component';
-import { RouterModule } from '@angular/router';
-import AddpostulationComponent from '../addpostulation/addpostulation.component';
+import {MatSelectModule} from '@angular/material/select';
+import { FormControl } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from  '@angular/material/form-field' ;
+import {MatPaginatorModule, PageEvent} from '@angular/material/paginator';
+
 
 @Component({
-  selector: 'app-element-color',
+  selector: 'app-stages',
   standalone: true,
-  imports: [
-    MatButtonModule,
-    MatCardModule,
-    CommonModule,
-    MatPaginatorModule,
-    MatIconModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatDialogModule,
-    RouterModule
-  ],
+  imports: [CommonModule, MatCardModule,MatButtonModule,MatIconModule,MatSelectModule,ReactiveFormsModule,MatInputModule,MatFormFieldModule,MatPaginatorModule],
   templateUrl: './stages.component.html',
-  styleUrls: ['./stages.component.scss'],
+  styleUrls: ['./stages.component.scss']
 })
-
-export default class StagesComponents implements OnInit {
-  allStages:StageModel[] = []; 
-
-  constructor(public dialog: MatDialog, private stage: StageServicesService ) {}
-  ngOnInit(): void {
-    this.getApi();
-  }
-
-  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
-    this.dialog.open(AddstageComponent, {
-      width: '450px',
-      height: '500px',
-      enterAnimationDuration,
-      exitAnimationDuration,
-      
-    })
-    this.dialog.open(AddpostulationComponent, {
-      
-    });
-  }
-
-  getApi(){
-    this.stage.get()
-    .subscribe((data)=>{
-      this.allStages = data
-      this.stage.get().forEach })
-  }
-
+export default class StagesComponent implements OnInit{
+  stage: StagesModel[] =[];
   
- 
-}
+  totalCount: number=0;
+  currentPageNumber= 1;
+  pageSize: number=6;
+  constructor(private stageService: StagesService){}
 
+  ngOnInit(): void {
+  this.getStages(); 
+ 
+   
+  }
+  
+  
+  getStages(  ){
+    this.stageService.GetAllUsers(this.currentPageNumber, this.pageSize)
+    .subscribe((Response)=>{
+      this.stage = Response.body as StagesModel[];
+      this.totalCount = Response.headers.getAll('X-Total-Count')
+      ? Number(Response.headers.getAll('X-Total-Count'))
+      : 0;
+     })
+  }
+
+  handlePageEvent(e:PageEvent){
+    this.currentPageNumber = (e.pageIndex +1);
+    this.pageSize= e.pageSize;
+    this.getStages()
+  }
+}
