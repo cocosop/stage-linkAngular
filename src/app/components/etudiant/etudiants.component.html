@@ -1,15 +1,15 @@
 <div style="display: flex; justify-content: space-between;align-items: center;">
   <div>
       <mat-form-field>
-          <mat-label>Filtrer la recherche</mat-label>
+          <mat-label>Filtrer la recherche<i class="ti ti-filter" style="margin-left: 15px;"></i></mat-label>
           <input matInput (keyup)="applyFilter($event)" #input>
-          <mat-icon matSuffix>filter_list</mat-icon>
+          
       </mat-form-field>
   </div>
   <div class="demo-button-container">
       <button mat-raised-button style="background-color: #162E58;color: white;"
            class="demo-button">
-          <mat-icon>person_add</mat-icon>
+           <i class="ti ti-user" title="Add student"></i>
           Ajouter un étudiant
       </button>
   </div>
@@ -59,9 +59,9 @@
       <ng-container matColumnDef="actions">
           <th mat-header-cell *matHeaderCellDef aria-label="row actions"> Actions </th>
           <td mat-cell *matCellDef="let row">
-              <mat-icon >visibility</mat-icon>&nbsp;&nbsp;
-              <mat-icon >edit</mat-icon>&nbsp;&nbsp;
-              <mat-icon color="warn" >delete_forever</mat-icon>
+            <i class="ti ti-eye" title="profil etudiant"></i>&nbsp;&nbsp;
+            <i class="ti ti-pencil" title="Modifier profil"></i>&nbsp;&nbsp;
+            <i class="ti ti-trash" style="color: red;" title="Supprimer etudiant"></i>
           </td>
       </ng-container>
 
