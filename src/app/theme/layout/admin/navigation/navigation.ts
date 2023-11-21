@@ -73,7 +73,7 @@ const NavigationItems = [
         type: 'item',
         classes: 'nav-item',
         url: '/forum',
-        icon: 'ti ti-vocabulary',
+        icon: 'ti ti-building',
        
       }
     ]
