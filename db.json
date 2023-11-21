@@ -181,12 +181,99 @@
                           "description": "analyser les données"
                         }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
+  "etudiants": [
+      {
+        "id": "1",
+        "name": "Doe",
+        "prenom": "John",
+        "matricule": "JD001",
+        "competences": "Informatique",
+        "interets": "Musique",
+        "telephone": "1234567890",
+        "email": "johndoe@example.com",
+        "motDePasse": "password1",
+        "statut": "Employé"
+      },
+      {
+        "id": "2",
+        "name": "Smith",
+        "prenom": "Jane",
+        "matricule": "JS002",
+        "competences": "Marketing",
+        "interets": "Voyages",
+        "telephone": "9876543210",
+        "email": "janesmith@example.com",
+        "motDePasse": "password2",
+        "statut": "Manager"
+      },
+      {
+        "id": "3",
+        "name": "Garcia",
+        "prenom": "Carlos",
+        "matricule": "CG003",
+        "competences": "Finance",
+        "interets": "Sports",
+        "telephone": "5556667777",
+        "email": "carlosgarcia@example.com",
+        "motDePasse": "password3",
+        "statut": "Stagiaire"
+      },
+      {
+        "id": "4",
+        "name": "Chen",
+        "prenom": "Ling",
+        "matricule": "CL004",
+        "competences": "Ressources humaines",
+        "interets": "Cuisine",
+        "telephone": "3332221111",
+        "email": "lingchen@example.com",
+        "motDePasse": "password4",
+        "statut": "Employé"
+      },
+      {
+        "id": "5",
+        "name": "Kumar",
+        "prenom": "Raj",
+        "matricule": "RK005",
+        "competences": "Développement web",
+        "interets": "Photographie",
+        "telephone": "9998887777",
+        "email": "raj.kumar@example.com",
+        "motDePasse": "password5",
+        "statut": "Manager"
+      },
+      { "id": "6", 
+        "name": "Garcia", 
+        "prenom": "Maria", 
+        "matricule": "MG006", 
+        "competences": "Communication", 
+        "interets": "Théâtre", 
+        "telephone": "7778889999", 
+        "email": "mariagarcia@example.com", 
+        "motDePasse": "password6", 
+        "statut": false
+       }
+       , { "id": "7", "nom": "Lee", "prenom": "Ji-hyun", "matricule": "LJ007", "filiere": "Design graphique", "competences": "Art", "telephone": "6665554444", "email": "ji-hyun.lee@example.com", "motDePasse": "password7", "statut": false }, 
+       { "id": "8", "nom": "Rossi", "prenom": "Giuseppe", "matricule": "RG008", "filiere": "Gestion de projet", "competences": "Lecture", "telephone": "4443332222", "email": "giuseppe.rossi@example.com", "motDePasse": "password8", "statut":false }, 
+       { "id": "9", "nom": "Kim", "prenom": "Soo-jin", "matricule": "KS009", "filiere": "Ressources humaines", "competences": "Cinéma", "telephone": "2221110000", "email": "soo-jin.kim@example.com", "motDePasse": "password9", "statut": false }, 
+       { "id": "10", "nom": "Singh", "prenom": "Amit", "matricule": "SA010", "filiere": "Analyse financière", "competences": "Musique", "telephone": "8889990000", "email": "amit.singh@example.com", "motDePasse": "password10", "statut": false }, 
+       { "id": "11", "nom": "Dubois", "prenom": "Sophie", "matricule": "DS011", "filiere": "Marketing", "competences": "Voyages", "telephone": "7778889999", "email": "sophie.dubois@example.com", "motDePasse": "password11", "statut": false }, 
+       { "id": "12", "nom": "Wong", "prenom": "Michael", "matricule": "WM012", "filiere": "Développement logiciel", "competences": "Jeux vidéo", "telephone": "6667778888", "email": "michael.wong@example.com", "motDePasse": "password12", "statut": false }, 
+       { "id": "13", "nom": "Gomez", "prenom": "Ana", "matricule": "GA013", "filiere": "Communication", "competences": "Photographie", "telephone": "5556667777", "email": "ana.gomez@example.com", "motDePasse": "password13", "statut": false }, 
+       { "id": "13", "nom": "Gomez", "prenom": "Ana", "matricule": "GA013", "filiere": "Communication", "competences": "Photographie", "telephone": "5556667777", "email": "ana.gomez@example.com", "motDePasse": "password13", "statut": false }, 
+       { "id": "14", "nom": "Chung", "prenom": "Soo-min", "matricule": "CS014", "filiere": "Relations publiques", "competences": "Art", "telephone": "4445556666", "email": "soo-min.chung@example.com", "motDePasse": "password14", "statut": false }, 
+       { "id": "15", "nom": "Müller", "prenom": "Hans", "matricule": "MH015", "filiere": "Gestion des opérations", "competences": "Cuisine", "telephone": "3334445555", "email": "hans.muller@example.com", "motDePasse": "password15", "statut": true },
+        { "id": "16", "nom": "Lopez", "prenom": "Maria", "matricule": "LM016", "filiere": "Ressources humaines", "competences": "Danse", "telephone": "2223334444", "email": "maria.lopez@example.com", "motDePasse": "password16", "statut": true }, 
+        { "id": "17", "nom": "Roy", "prenom": "Amitabh", "matricule": "RA017", "filiere": "Analyse financière", "competences": "Lecture", "telephone": "1112223333", "email": "amitabh.roy@example.com", "motDePasse": "password17", "statut": true },
+         { "id": "18", "nom": "Nguyen", "prenom": "Thi", "matricule": "NT018", "filiere": "Marketing", "competences": "Voyages", "telephone": "9990001111", "email": "thi.nguyen@example.com", "motDePasse": "password18", "statut": "Employé" }, 
+         { "id": "19", "nom": "Gupta", "prenom": "Rajesh", "matricule": "GR019", "filiere": "Développement web", "competences": "Photographie", "telephone": "8889990000", "email": "rajesh.gupta@example.com", "motDePasse": "password19", "statut": true}, 
+         { "id": "20", "nom": "Andersen", "prenom": "Lars", "matricule": "AL020", "filiere": "Communication", "competences": "Théâtre", "telephone": "7778889999", "email": "lars.andersen@example.com", "motDePasse": "password20", "statut": true },
+          { "id": "21", "nom": "Sato", "prenom": "Yuki", "matricule": "SY021", "filiere": "Design graphique", "competences": "Art", "telephone": "6665554444", "email": "yuki.sato@example.com", "motDePasse": "password21", "statut": true },
+           { "id": "22", "nom": "Ricci", "prenom": "Giulia", "matricule": "RG022", "filiere": "Gestion de projet", "competences": "Lecture", "telephone": "4443332222", "email": "giulia.ricci@example.com", "motDePasse": "password22", "statut": false },
+            { "id": "23", "nom": "Park", "prenom": "Min-ji", "matricule": "PM023", "filiere": "Ressources humaines", "competences": "Cinéma", "telephone": "2221110000", "email": "min-ji.park@example.com", "motDePasse": "password23", "statut": true }, 
+            { "id": "24", "nom": "Singh", "prenom": "Amit", "matricule": "SA024", "filiere": "Analyse financière", "competences": "Musique", "telephone": "8889990000", "email": "amit.singh@example.com", "motDePasse": "password24", "statut": false }, 
+            { "id": "25", "nom": "Dubois", "prenom": "Sophie", "matricule": "DS025", "filiere": "Marketing", "competences": "Voyages", "telephone": "7778889999", "email": "sophie.dubois@example.com", "motDePasse":"password25", "statut": true}
+      
   ],
   "profile": {
     "name": "typicode"
