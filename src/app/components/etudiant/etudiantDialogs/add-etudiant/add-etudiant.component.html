@@ -1,0 +1,94 @@
+<div mat-dialog-title class="title">
+    <h2 style="color: #162E58; font-weight: bolder;">Créer un nouvel étudiant</h2>
+</div>
+<hr>
+<div mat-dialog-content class="container">
+    <form [formGroup]="formAdd" (ngSubmit)="save()">
+        <div class="form-fields" style="margin-top: 10px;">
+            <mat-form-field appearance="outline">
+                <mat-label>Nom</mat-label>
+                <input matInput formControlName="name">
+                <i class="ti ti-user"></i>
+                <mat-error *ngIf="formAdd.controls.name.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Prenom</mat-label>
+                <input matInput formControlName="prenom">
+                <i class="ti ti-user"></i>
+                <mat-error *ngIf="formAdd.controls.prenom.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-fields">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">                
+                <mat-error
+                    *ngIf="formAdd.controls.email.hasError('email') && !formAdd.controls.email.hasError('required')">
+                    Email incorrect
+                </mat-error>
+                <mat-error *ngIf="formAdd.controls.email.hasError('required')">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Competences</mat-label>
+                <input matInput formControlName="competences">
+                <mat-error *ngIf="formAdd.controls.competences.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form-fields">
+            <mat-form-field appearance="outline">
+                <mat-label>Telephone</mat-label>
+                <input matInput formControlName="telephone">
+                <i class="ti ti-phone"></i>
+                <mat-error *ngIf="formAdd.controls.telephone.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Matricule</mat-label>
+                <input matInput formControlName="matricule" >
+                <mat-error *ngIf="formAdd.controls.matricule.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-fields" style="margin-top: 10px;">
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Mot de Passe</mat-label>
+                <input matInput formControlName="motDePasse">                
+                <mat-error *ngIf="formAdd.controls.motDePasse.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Statut</mat-label>
+                <mat-select formControlName="statut">
+                    <mat-option value="Actif">Actif</mat-option>
+                    <mat-option value="Inactif">Inactif</mat-option>
+                </mat-select>
+                <mat-error *ngIf="formAdd.controls.statut.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </form>
+</div>
+<div mat-dialog-actions class="form-buttons">
+    <button mat-raised-button style="color: #162E58;" (click)="save()">
+        Enregistrer
+    </button>
+    <button mat-raised-button color="warn" (click)="onNoClick()">Annuler</button>
+    
+</div>

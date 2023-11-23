@@ -36,7 +36,7 @@ const NavigationItems = [
       
       {
         id: 'stages',
-        title: 'Intership',
+        title: 'Interships',
         type: 'item',
         classes: 'nav-item',
         url: '/stages',
@@ -44,7 +44,7 @@ const NavigationItems = [
       },
       {
         id: 'postulation',
-        title: 'Applications',
+        title: 'Postulations',
         type: 'item',
         classes: 'nav-item',
         url: '/postulations',
@@ -52,7 +52,7 @@ const NavigationItems = [
       },
       {
         id: 'Entreprise',
-        title: 'Company',
+        title: 'Companies',
         type: 'item',
         classes: 'nav-item',
         url: '/entreprises',
@@ -78,40 +78,7 @@ const NavigationItems = [
       }
     ]
   },
-  {
-    id: 'page',
-    title: 'Pages',
-    type: 'group',
-    icon: 'icon-navigation',
-    children: [
-      {
-        id: 'Authentication',
-        title: 'Authentication',
-        type: 'collapse',
-        icon: 'ti ti-key',
-        children: [
-          {
-            id: 'login',
-            title: 'Login',
-            type: 'item',
-            url: '/guest/login',
-            target: true,
-            breadcrumbs: false
-          },
-          {
-            id: 'register',
-            title: 'Register',
-            type: 'item',
-            url: '/guest/register',
-            target: true,
-            breadcrumbs: false
-          }
-        ]
-      }
-    ]
-  },
-
-  {
+   {
     id: 'card',
     title: 'card',
     type: 'groupe',

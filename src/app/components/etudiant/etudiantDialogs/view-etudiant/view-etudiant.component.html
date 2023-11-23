@@ -1,0 +1,46 @@
+<div >
+  <mat-card >
+  
+    <h3>Profil de {{etudiant.name}}  {{etudiant.prenom}}</h3>
+<mat-list>
+  <div style="display: flex; flex-direction: row;">
+    <mat-list-item>
+      <span matListItemTitle>Nom</span>
+      <span matListItemLine>{{etudiant.name}}</span>
+    </mat-list-item>
+    <mat-list-item>
+      <span matListItemTitle>Prenom</span>
+      <span>{{etudiant.prenom}}</span>
+    </mat-list-item>
+  </div>
+  <div style="display: flex; flex-direction: row;">
+    <mat-list-item>
+      <span matListItemTitle>Telephone</span>
+      {{etudiant.telephone}}
+    </mat-list-item>
+    <mat-list-item>
+      <span matListItemTitle>Email</span>
+      {{etudiant.email}}
+    </mat-list-item>    
+  </div>
+  <div style="display: flex; flex-direction: row;">
+    <mat-list-item>
+      <span matListItemTitle>Matricule</span>
+      {{etudiant.matricule}}
+    </mat-list-item>
+    <mat-list-item>
+      <span matListItemTitle>Compétences</span>
+      {{etudiant.competences}}
+    </mat-list-item>  
+  </div>  
+  <mat-list-item>
+    <span matListItemTitle>Statut</span>
+    {{etudiant.statut}}
+  </mat-list-item>
+</mat-list>
+
+<div mat-dialog-actions class="form-buttons">
+  <button mat-raised-button color="warn" (click)="onNoClick()">Fermer</button>
+</div>
+</mat-card >
+</div>

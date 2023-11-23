@@ -1,12 +1,80 @@
-<div class="row">
-  <div class="col-sm-12">
-    <app-card cardTitle="Hello Card">
-      <p>
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-        in culpa qui officia deserunt mollit anim id est laborum."
-      </p>
-    </app-card>
-  </div>
+<div style="display: flex; justify-content: space-between;align-items: center;">
+    <div>
+        <mat-form-field>
+            <mat-label>Filtrer la recherche<i class="ti ti-filter" style="margin-left: 15px;"></i></mat-label>
+            <input matInput (keyup)="applyFilter($event)" #input>
+        </mat-form-field>
+    </div>
+    <div class="demo-button-container">
+        <button mat-raised-button style="background-color: #162E58;color: white;" class="demo-button"
+            (click)="openDialogAdd()">
+            <i class="ti ti-user" title="Add student"></i>
+            Ajouter une entreprise
+        </button>
+    </div>
+</div>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef=id>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+            <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="nomEntreprise">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nom entreprise</th>
+            <td mat-cell *matCellDef="let row"> {{row.nomEntreprise}} </td>
+        </ng-container>
+        <ng-container matColumnDef="responsable">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Responsable stage</th>
+            <td mat-cell *matCellDef="let row"> {{row.responsable}} </td>
+        </ng-container>
+        <ng-container matColumnDef="telephone">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Telephone</th>
+            <td mat-cell *matCellDef="let row"> {{row.telephone}} </td>
+        </ng-container>
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+            <td mat-cell *matCellDef="let row"><a style="color: blue;" [style.cursor]="'pointer'"
+                    (click)="onClickEmail(row)">{{row.email}}</a> </td>
+        </ng-container>
+        <ng-container matColumnDef="adresse">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Adresse</th>
+            <td mat-cell *matCellDef="let row"> {{row.adresse}} </td>
+        </ng-container>
+        <ng-container matColumnDef="dateInscription">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Date Inscription</th>
+            <td mat-cell *matCellDef="let row">{{row.dateInscription}}</td>
+        </ng-container>
+        <ng-container matColumnDef="stage">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Stage</th>
+            <td mat-cell *matCellDef="let row">{{row.stage}}</td>
+        </ng-container>
+        <ng-container matColumnDef="statut">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Statut</th>
+            <td mat-cell *matCellDef="let row">{{row.statut}}</td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef aria-label="row actions" style="width:120px ;">Actions </th>
+            <td mat-cell *matCellDef="let row">
+                <a (click)="openDialogView(row)">
+                    <i class="ti ti-eye" title="profil etudiant" style="color: blue;"></i>
+                </a>&nbsp;&nbsp;
+                <a (click)="openDialogEdit(row)">
+                    <i class="ti ti-pencil" title="profil etudiant" style="color: brown;"></i>
+                </a>&nbsp;&nbsp;
+                <a (click)="openDialogDelete(row)">
+                    <i class="ti ti-trash" title="profil etudiant" style="color: red;"></i>
+                </a>&nbsp;&nbsp;
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4"> Aucune donnée correspondant au filtre </td>
+        </tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons
+        aria-label="Select page of users"></mat-paginator>
 </div>

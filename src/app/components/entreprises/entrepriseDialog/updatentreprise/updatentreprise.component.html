@@ -1,0 +1,94 @@
+<div mat-dialog-title class="title">
+    <h2 style="color: #162E58; font-weight: bolder;">Mettre à jour les informations</h2>
+</div>
+<hr>
+<div mat-dialog-content class="container">
+    <form [formGroup]="formModif">
+        <div class="form-fields" style="margin-top: 10px;">
+            <mat-form-field appearance="outline">
+                <mat-label>Nom de l'entreprise</mat-label>
+                <input matInput formControlName="nomEntreprise">
+                <mat-error *ngIf="formModif.controls.nomEntreprise.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Nom du responsable</mat-label>
+                <input matInput formControlName="responsable">
+                <mat-error *ngIf="formModif.controls.responsable.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-fields">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+                <mat-error
+                    *ngIf="formModif.controls.email.hasError('email') && !formulaireModif.controls.email.hasError('required')">
+                    Email incorrect
+                </mat-error>
+                <mat-error *ngIf="formModif.controls.email.hasError('required')">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Telephone</mat-label>
+                <input matInput formControlName="telephone">
+                <mat-error *ngIf="formModif.controls.telephone.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-fields">
+            <mat-form-field appearance="outline">
+                <mat-label>Adresse</mat-label>
+                <input matInput formControlName="adresse">
+                <mat-error *ngIf="formModif.controls.adresse.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Mot de Passe</mat-label>
+                <input matInput formControlName="motDePasse">
+                <mat-error *ngIf="formModif.controls.motDePasse.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-fields"> 
+            <mat-form-field appearance="outline">
+                <mat-label>Date d'inscription</mat-label>
+                <input matInput formControlName="dateInscription">
+                <mat-error *ngIf="formModif.controls.dateInscription.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>          
+            <mat-form-field>
+                <mat-label>Statut</mat-label>
+                <mat-select formControlName="statut">
+                    <mat-option value="Actif">Actif</mat-option>
+                    <mat-option value="Inactif">Inactif</mat-option>
+                </mat-select>
+                <mat-error *ngIf="formModif.controls.statut.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-fields"> 
+            <mat-form-field appearance="outline">
+                <mat-label>Stage</mat-label>
+                <input matInput formControlName="stage">
+                <mat-error *ngIf="formModif.controls.stage.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field> 
+        </div>
+    </form>
+</div>
+<div mat-dialog-actions class="form-buttons">
+    <button mat-raised-button style="background-color: #162E58;" (click)="edit()">
+        Update
+    </button>
+    <button mat-raised-button color="warn" (click)="onNoClick()">Cancel</button>
+</div>

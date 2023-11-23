@@ -1,0 +1,81 @@
+<div mat-dialog-title class="title">
+    <h2 style="color: #162E58; font-weight: bolder;">Mettre à jour les informations</h2>
+</div>
+<hr>
+<div mat-dialog-content class="container">
+    <form [formGroup]="formModif">
+        <div class="form-fields" style="margin-top: 10px;">
+            <mat-form-field appearance="outline">
+                <mat-label>Nom</mat-label>
+                <input matInput formControlName="name">
+                <mat-error *ngIf="formModif.controls.name.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Prenom</mat-label>
+                <input matInput formControlName="prenom">
+                <mat-error *ngIf="formModif.controls.prenom.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form-fields">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+                <mat-error
+                    *ngIf="formModif.controls.email.hasError('email') && !formulaireModif.controls.email.hasError('required')">
+                    Email incorrect
+                </mat-error>
+                <mat-error *ngIf="formModif.controls.email.hasError('required')">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Telephone</mat-label>
+                <input matInput formControlName="telephone">
+                <mat-error *ngIf="formModif.controls.telephone.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-fields">
+
+            <mat-form-field appearance="outline">
+                <mat-label>Competences</mat-label>
+                <input matInput formControlName="competences">
+                <mat-error *ngIf="formModif.controls.competences.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-fields">
+            <mat-form-field appearance="outline">
+                <mat-label>Mot de Passe</mat-label>
+                <input matInput formControlName="motDePasse">
+                <mat-error *ngIf="formModif.controls.motDePasse.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Statut</mat-label>
+                <mat-select formControlName="statut">
+                    <mat-option value="Actif">Actif</mat-option>
+                    <mat-option value="Inactif">Inactif</mat-option>
+                </mat-select>
+                <mat-error *ngIf="formModif.controls.statut.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </form>
+</div>
+<div mat-dialog-actions class="form-buttons">
+    <button mat-raised-button style="background-color: #162E58;" (click)="edit()">
+        Update
+    </button>
+    <button mat-raised-button color="warn" (click)="onNoClick()">Cancel</button>
+</div>
