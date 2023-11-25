@@ -16,7 +16,6 @@
 </div>
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort>
-
       <ng-container matColumnDef=id>
           <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
           <td mat-cell *matCellDef="let row"> {{row.id}} </td>
@@ -25,17 +24,14 @@
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Matricule </th>
           <td mat-cell *matCellDef="let row"> {{row.matricule}} </td>
       </ng-container>
-
       <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom </th>
           <td mat-cell *matCellDef="let row"> {{row.name}} </td>
       </ng-container>
-
       <ng-container matColumnDef="prenom">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Prenom </th>
           <td mat-cell *matCellDef="let row"> {{row.prenom}} </td>
       </ng-container>
-
       <ng-container matColumnDef="competences">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Compétences </th>
           <td mat-cell *matCellDef="let row"> {{row.competences}} </td>
@@ -49,8 +45,7 @@
           <td mat-cell *matCellDef="let row"><a style="color: blue;" [style.cursor]="'pointer'"
             (click)="onClickEmail(row)"
             >{{row.email}}</a> </td>
-      </ng-container>
-      
+      </ng-container>      
     <ng-container matColumnDef="statut">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Statut </th>
       <td mat-cell *matCellDef="let row"> {{row.statut}} </td>
@@ -69,15 +64,12 @@
             </a>&nbsp;&nbsp;           
           </td>
       </ng-container>
-
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
       <tr class="mat-row" *matNoDataRow>
           <td class="mat-cell" colspan="4"> Aucune donnée correspondant au filtre </td>
       </tr>
   </table>
-
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons
       aria-label="Select page of users"></mat-paginator>
 </div>
