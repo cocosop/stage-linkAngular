@@ -1,18 +1,47 @@
 .example-card{
-    margin: 5%;
-    margin-top: 1px;
-    margin-left: 12px;
-    width: 25%;
+    margin: 0%;
+    margin-top: 5px;
+    padding-left: 2px;
+    margin-left: 20px;
+    width: 23%;
     text-align: left;
-    height:auto;
+    border-radius: 10px;
+    border-radius: 10px 0px 10px 0px;
+
     // align-items: center;
 }
 
 .app-wrapper{
-    
-    margin-left: 52px;
     display: flex;
     flex-wrap: wrap;
-    
+}
+.menu_button{
+  align-items: left;
+
 }
 
+.paginator{
+width: 2000px;
+background-color: rgb(226, 226, 240);
+border-radius: 20px;
+}
+.head{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 20px;
+}
+.matcard_header{
+background-color: #162E58;
+color: white;
+text-align:right;
+border-radius: 10px 0px 0px 0px;
+margin-left: -2px;
+}
+
+.page-stage{
+  background-color: rgb(226, 226, 240);
+  margin-left: 0px;
+  margin-top: -20px;
+  border-radius: 10px;
+}

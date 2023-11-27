@@ -11,6 +11,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { Etudiant } from '../../etudiant';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faCoffee, faEye } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-add-etudiant',
@@ -38,6 +40,7 @@ import { Etudiant } from '../../etudiant';
   styleUrl: './add-etudiant.component.scss'
 })
 export class AddEtudiantComponent implements OnInit{
+  faCoffee = faCoffee;
   formAdd = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.required]),
     prenom: new FormControl('', [Validators.required, Validators.required]),

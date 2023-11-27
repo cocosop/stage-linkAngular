@@ -1,0 +1,40 @@
+<div mat-dialog-title class="title">
+    <h2 style="color: #162E58; font-weight: bolder;">Create a new internship</h2>
+</div>
+<hr>
+<div mat-dialog-content class="container">
+    <form [formGroup]="formAdd" (ngSubmit)="save()">
+        <div class="form-fields" style="margin-top: 10px;">
+            <mat-form-field appearance="outline">
+                <mat-label>Title</mat-label>
+                <input matInput formControlName="titre">
+                <i class="ti ti-user"></i>
+                <mat-error *ngIf="formAdd.controls.titre.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Localisation</mat-label>
+                <input matInput formControlName="localisation">
+                <i class="ti ti-user"></i>
+                <mat-error *ngIf="formAdd.controls.localisation.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <input matInput formControlName="description">
+                <i class="ti ti-user"></i>
+                <mat-error *ngIf="formAdd.controls.description.status ==='INVALID'">
+                    Champ requis
+                </mat-error>
+            </mat-form-field>
+        </div>           
+    </form>
+</div>
+<div mat-dialog-actions class="form-buttons">
+    <button mat-raised-button style="color: #162E58;" (click)="save()">
+        Enregistrer
+    </button>
+    <button mat-raised-button color="warn" (click)="onNoClick()">Annuler</button>    
+</div>

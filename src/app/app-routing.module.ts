@@ -45,7 +45,7 @@ const routes: Routes = [
 
       {
         path:'addstage',
-        loadChildren: () => import('./components/addstage/addstage.component')
+        loadChildren: () => import('./components/stages/stageDialog/addstage/addstage.component')
       },
 
       {

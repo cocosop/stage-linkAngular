@@ -1,6 +1,7 @@
-export interface StagesModel {
-    id: string,
-    titre: string,
-    localisation: string,
-    description: string
+export class StagesModel {
+    id!: number;
+    titre!: string;
+    localisation!: string;
+    description!: string;
+    
 }

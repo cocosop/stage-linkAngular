@@ -11,50 +11,56 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from  '@angular/material/form-field' ;
 import {MatPaginatorModule, PageEvent} from '@angular/material/paginator';
-import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose } from '@angular/material/dialog';
+import AddstageComponent from './stageDialog/addstage/addstage.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { DeletestageComponent } from './stageDialog/deletestage/deletestage.component';
 
 
 @Component({
   selector: 'app-stages',
   standalone: true,
-  imports: [CommonModule, MatCardModule,MatButtonModule,MatIconModule,MatSelectModule,ReactiveFormsModule,MatInputModule,MatFormFieldModule,MatPaginatorModule,FormsModule],
+  imports: [CommonModule, MatCardModule,MatButtonModule,MatIconModule,MatSelectModule,ReactiveFormsModule,MatInputModule,MatFormFieldModule,MatPaginatorModule,FormsModule, MatInputModule, MatIconModule,MatMenuModule],
   templateUrl: './stages.component.html',
   styleUrls: ['./stages.component.scss']
 })
 export default class StagesComponent implements OnInit{
   stage: StagesModel[] =[];
-  
+
+
   totalCount: number=0;
   currentPageNumber= 1;
-  pageSize: number=6;
+  pageSize: number=8;
   searchText: string = '';
   filteredcards: any[];
-  constructor(private stageService: StagesService){
+  constructor(private stageService: StagesService, public dialog: MatDialog){
     this.filteredcards = this.stage;
   }
- 
+
 
   ngOnInit(): void {
   this.getStages();
-   
+
   }
 
   getStages(  ){
-    this.stageService.GetAllUsers(this.currentPageNumber, this.pageSize)
+    this.stageService.GetAllStage(this.currentPageNumber, this.pageSize)
     .subscribe((Response)=>{
       this.stage = Response.body as StagesModel[];
-      this.filteredcards = Response.body as StagesModel[];
+
+      console.log
       this.totalCount = Response.headers.getAll('X-Total-Count')
       ? Number(Response.headers.getAll('X-Total-Count'))
       : 0;
+      this.filteredcards=this.stage
      })
   }
   filterCardes() {
     this.filteredcards = this.stage.filter(card => {
-      return card.description.toLowerCase().includes(this.searchText.toLowerCase()) || 
-             card.titre.toLowerCase().includes(this.searchText.toLowerCase()) || 
-             card.id.toString().toLowerCase().includes(this.searchText.toLowerCase()) || 
+      return card.description.toLowerCase().includes(this.searchText.toLowerCase()) ||
+             card.titre.toLowerCase().includes(this.searchText.toLowerCase()) ||
+             card.id.toString().toLowerCase().includes(this.searchText.toLowerCase()) ||
              card.localisation.toLowerCase().includes(this.searchText.toLowerCase());
     });
   }
@@ -62,6 +68,38 @@ export default class StagesComponent implements OnInit{
   handlePageEvent(e:PageEvent){
     this.currentPageNumber = (e.pageIndex +1);
     this.pageSize= e.pageSize;
+    this.filteredcards = [];
     this.getStages()
   }
+
+
+
+  closeDialog(stage: StagesModel) {
+    this.stage.push(stage);
+    this.stage = [...this.stage];
+  }
+
+  openDialogAdd(): void {
+    this.dialog.open(AddstageComponent, {
+      width: '550px',
+    }).afterClosed().subscribe((stage) => {
+      if (stage) {
+      };
+    })
+  }
+  openDialogDelete(item: any) {
+    this.dialog.open(DeletestageComponent, {
+      width: '350px',
+      data: item
+    }).afterClosed().subscribe((stage) => {
+      if (stage) {
+        this.closeDialog(stage);
+        this.getStages()
+
+      };
+    })
+  }
+
+
+
 }

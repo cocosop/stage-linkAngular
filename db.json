@@ -19,18 +19,6 @@
       "description": "analyser les données"
     },
     {
-      "id": 4,
-      "titre": "Controleur",
-      "localisation": "Douala",
-      "description": "controller les comptes"
-    },
-    {
-      "id": 5,
-      "titre": "developpeur junior",
-      "localisation": "Bertoua",
-      "description": "developper des app angular"
-    },
-    {
       "id": 6,
       "titre": "data analyst",
       "localisation": "Egypte",
@@ -43,40 +31,10 @@
       "description": "controller les comptes"
     },
     {
-      "id": 8,
-      "titre": "developpeur junior",
-      "localisation": "Bertoua",
-      "description": "developper des app angular"
-    },
-    {
-      "id": 9,
-      "titre": "data analyst",
-      "localisation": "Egypte",
-      "description": "analyser les données"
-    },
-    {
-      "id": 10,
-      "titre": "Controleur",
-      "localisation": "Douala",
-      "description": "controller les comptes"
-    },
-    {
       "id": 11,
       "titre": "developpeur junior",
       "localisation": "Bertoua",
       "description": "developper des app angular"
-    },
-    {
-      "id": 12,
-      "titre": "data analyst",
-      "localisation": "Egypte",
-      "description": "analyser les données"
-    },
-    {
-      "id": 13,
-      "titre": "Controleur",
-      "localisation": "Douala",
-      "description": "controller les comptes"
     },
     {
       "id": 14,
@@ -179,6 +137,24 @@
       "titre": "data analyst",
       "localisation": "Egypte",
       "description": "analyser les données"
+    },
+    {
+      "titre": "Gestionnaire de stock",
+      "localisation": "Douala",
+      "description": "Manager le stock de produits de l'entreprise",
+      "id": 31
+    },
+    {
+      "titre": "Gestionnaire",
+      "localisation": "Douala",
+      "description": "Manager des équipes",
+      "id": 32
+    },
+    {
+      "titre": "Data Analyst",
+      "localisation": "Bertoua",
+      "description": "Analyse les données de l'entreprise",
+      "id": 33
     }
   ],
   "etudiants": [
@@ -530,16 +506,15 @@
       "id": 33
     },
     {
-      "responsable": "Jane Smith",
-      "nomEntreprise": "Widgets R Us",
-      "telephone": "555 5678",
-      "email": "jane@widgets.com",
-      "adresse": "100 Industrial Way, Chicago",
-      "motDePasse": "passw0rd!",
-      "dateInscription": "2022-02-15",
-      "stage": "developpement web",
+      "name": "Mombo",
+      "prenom": "Gabriel",
+      "email": "mombo.123@gmail",
+      "telephone": "679652458",
+      "motDePasse": "11111111",
       "statut": "Actif",
-      "id": 34
+      "competences": "Developpeur web",
+      "matricule": "MAT2",
+      "id": 35
     }
   ],
   "entreprise": [

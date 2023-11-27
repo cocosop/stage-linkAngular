@@ -23,7 +23,7 @@ export class EntreprisesService {
     return this.http.delete<Entreprises>(`${this.BASE_URL}/${id}`)
   }
   addEntreprise(entreprise: Entreprises): Observable<Entreprises> {
-    return this.http.post<Entreprises>(`${"http://localhost:3000/etudiants"}`, entreprise)
+    return this.http.post<Entreprises>(`${"http://localhost:3000/entreprise"}`, entreprise)
   }
   editEntreprise(id: any, entreprise: Entreprises): Observable<Entreprises> {
     return this.http.put<Entreprises>(`${this.BASE_URL}/${id}`, entreprise)
