@@ -28,7 +28,7 @@ export class DeletestageComponent implements OnInit{
   delete() {
     return this.service.deleteStage(this.data.id).subscribe(stage => {
       this.dialogRef.close(stage);
-      location.assign('/stages');
+      location.assign('/admin/stages');
     })
   }
 

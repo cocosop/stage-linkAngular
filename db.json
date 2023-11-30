@@ -1,18 +1,6 @@
 {
   "stages": [
     {
-      "id": 1,
-      "titre": "Controleur",
-      "localisation": "Douala",
-      "description": "controller les comptes"
-    },
-    {
-      "titre": "developpeur junior",
-      "localisation": "Dshang",
-      "description": "developper des app angular",
-      "id": 2
-    },
-    {
       "titre": "data analyst",
       "localisation": "Maroc, Qatar",
       "description": "analyser les données",
