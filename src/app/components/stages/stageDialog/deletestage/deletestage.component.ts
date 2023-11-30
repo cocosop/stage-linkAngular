@@ -5,11 +5,12 @@ import { StagesModel } from '../../stages-model';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Location } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-deletestage',
   standalone: true,
-  imports: [CommonModule,MatDialogModule,MatButtonModule],
+  imports: [CommonModule,MatDialogModule,MatButtonModule,MatIconModule],
   templateUrl: './deletestage.component.html',
   styleUrl: './deletestage.component.scss'
 })

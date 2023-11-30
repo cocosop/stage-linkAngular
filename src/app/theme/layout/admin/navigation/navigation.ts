@@ -24,22 +24,31 @@ const NavigationItems = [
     // icon: 'icon-navigation',
     children: [
       {
+        id: 'home',
+        title: 'Home',
+        type: 'item',
+        classes: 'nav-item',
+        url: '/',
+        icon: 'ti ti-home',
+        breadcrumbs: false
+      },
+      {
         id: 'dashbord',
         title: 'Dashboard',
         type: 'item',
         classes: 'nav-item',
-        url: '/',
+        url: '/admin/dashboard',
         icon: 'ti ti-dashboard',
         breadcrumbs: false
       },
 
-      
+
       {
         id: 'stages',
         title: 'Interships',
         type: 'item',
         classes: 'nav-item',
-        url: '/stages',
+        url: '/admin/stages',
         icon: 'ti ti-notebook'
       },
       {
@@ -47,7 +56,7 @@ const NavigationItems = [
         title: 'Postulations',
         type: 'item',
         classes: 'nav-item',
-        url: '/postulations',
+        url: '/admin/postulations',
         icon: 'ti ti-plant-2',
       },
       {
@@ -55,15 +64,15 @@ const NavigationItems = [
         title: 'Companies',
         type: 'item',
         classes: 'nav-item',
-        url: '/entreprises',
+        url: '/admin/entreprises',
         icon: "ti ti-building"
       },
-      
+
       {
         id: 'Etudiant',
         title: 'Students',
         type: 'item',
-        url: '/etudiant',
+        url: '/admin/etudiant',
         classes: 'nav-item',
         icon: 'ti ti-brand-chrome'
       },
@@ -72,9 +81,9 @@ const NavigationItems = [
         title: 'Forum',
         type: 'item',
         classes: 'nav-item',
-        url: '/forum',
+        url: '/admin/forum',
         icon: 'ti ti-building',
-       
+
       }
     ]
   },
@@ -88,13 +97,13 @@ const NavigationItems = [
         id: 'stagedetails',
         title: 'voir plus...',
         type: 'item',
-        url: '/stagedetails',
-       
+        url: '/admin/stagedetails',
+
       },
     ]
   },
- 
- 
+
+
 ];
 
 @Injectable()

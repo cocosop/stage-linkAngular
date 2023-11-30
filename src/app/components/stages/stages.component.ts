@@ -16,19 +16,19 @@ import { MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogTitle, MatDialogCont
 import AddstageComponent from './stageDialog/addstage/addstage.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { DeletestageComponent } from './stageDialog/deletestage/deletestage.component';
+import { UpdatestageComponent } from './stageDialog/updatestage/updatestage.component';
+import { Route, RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-stages',
   standalone: true,
-  imports: [CommonModule, MatCardModule,MatButtonModule,MatIconModule,MatSelectModule,ReactiveFormsModule,MatInputModule,MatFormFieldModule,MatPaginatorModule,FormsModule, MatInputModule, MatIconModule,MatMenuModule],
+  imports: [CommonModule, MatCardModule,MatButtonModule,MatIconModule,MatSelectModule,ReactiveFormsModule,MatInputModule,MatFormFieldModule,MatPaginatorModule,FormsModule, MatInputModule, MatIconModule,MatMenuModule,RouterModule],
   templateUrl: './stages.component.html',
   styleUrls: ['./stages.component.scss']
 })
 export default class StagesComponent implements OnInit{
   stage: StagesModel[] =[];
-
-
   totalCount: number=0;
   currentPageNumber= 1;
   pageSize: number=8;
@@ -95,11 +95,20 @@ export default class StagesComponent implements OnInit{
       if (stage) {
         this.closeDialog(stage);
         this.getStages()
+      };
+    })
+  }
+  openDialogEdit(item: any) {
+    this.dialog.open(UpdatestageComponent, {
+      width: '550px',
+      data: item
+    }).afterClosed().subscribe((stage) => {
+      if (stage) {
+        this.closeDialog(stage);
 
       };
     })
   }
-
 
 
 }

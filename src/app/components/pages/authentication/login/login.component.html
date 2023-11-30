@@ -3,9 +3,6 @@
     <div class="auth-form">
       <div class="card my-5">
         <div class="card-body">
-          <a href="#" class="d-flex justify-content-center">
-            <img src="assets/images/logo-dark.svg" />
-          </a>
           <div class="row">
             <div class="d-flex justify-content-center">
               <div class="auth-header">
@@ -41,7 +38,7 @@
             </h5>
           </div>
           <div class="d-grid mt-4">
-            <button type="button" class="btn btn-secondary">Sign In</button>
+            <button [routerLink]="['/admin/dashboard']" type="button" class="btn btn-secondary">Sign In</button>
           </div>
           <hr />
           <h5 class="d-flex justify-content-center">

@@ -1,1 +1,39 @@
-<p>updatestage works!</p>
+<div mat-dialog-title class="title">
+  <h2 style="color: #162E58; font-weight: bolder;">Mettre à jour les informations</h2>
+</div>
+<hr>
+<div mat-dialog-content class="container">
+  <form [formGroup]="formUpdate">
+      <div class="form-fields" style="margin-top: 10px;">
+          <mat-form-field appearance="outline">
+              <mat-label>Titre</mat-label>
+              <input matInput formControlName="titre">
+              <mat-error *ngIf="formUpdate.controls.titre.status ==='INVALID'">
+                  Champ requis
+              </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+              <mat-label>Localisation</mat-label>
+              <input matInput formControlName="localisation">
+              <mat-error *ngIf="formUpdate.controls.localisation.status ==='INVALID'">
+                  Champ requis
+              </mat-error>
+          </mat-form-field>
+      </div>
+      <div class="form-fields">
+          <mat-form-field appearance="outline">
+              <mat-label>Description</mat-label>
+              <input matInput formControlName="description">
+              <mat-error *ngIf="formUpdate.controls.description.status ==='INVALID'">
+                  Champ requis
+              </mat-error>
+          </mat-form-field>
+      </div>
+  </form>
+</div>
+<div mat-dialog-actions class="form-buttons">
+  <button mat-raised-button style="background-color: #162E58;" (click)="edit()">
+      Update
+  </button>
+  <button mat-raised-button color="warn" (click)="onNoClick()">Cancel</button>
+</div>

@@ -30,7 +30,7 @@ import { MatCard, MatCardModule } from '@angular/material/card';
     FormsModule,
     MatButtonModule,
     MatSelectModule,
-    MatIconModule,            
+    MatIconModule,
     ReactiveFormsModule,
     MatNativeDateModule,
   MatCardModule],
@@ -42,33 +42,27 @@ export default class AddstageComponent implements OnInit{
     titre: new FormControl('', [Validators.required, Validators.required]),
     localisation: new FormControl('', [Validators.required, Validators.required]),
     description: new FormControl('', [Validators.required, Validators.required]),
-   
   })
   fileName: any;
-  
-  
   constructor(
     public dialogRef: MatDialogRef<StagesComponent>,
     private service: StagesService,
-    @Inject(MAT_DIALOG_DATA) public editData: any,    
+    @Inject(MAT_DIALOG_DATA) public editData: any,
   ) { }
-  ngOnInit(): void {   
-    
-  }
- 
+  ngOnInit(): void {
 
+  }
   hide = true;
   onNoClick(): void {
     this.dialogRef.close();
   }
-  
   save(): void {
     if (this.formAdd.status === 'VALID') {
       const stage = this.formAdd.value as unknown as StagesModel;
       this.service.addStage(stage).subscribe((stage) => {
-        console.log(stage) 
-        this.dialogRef.close(stage); 
-        this.ngOnInit()    
+        console.log(stage)
+        this.dialogRef.close(stage);
+        this.ngOnInit()
       });
     }
   }

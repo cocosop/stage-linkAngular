@@ -7,6 +7,7 @@ export class Etudiant {
     telephone!: string;
     email!: string;
     motDePasse!: string;
+    role!:string;
     statut!: string;
 
 }

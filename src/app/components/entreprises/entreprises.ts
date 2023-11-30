@@ -8,5 +8,6 @@ export class Entreprises {
     motDePasse!: string;
     dateInscription!: string;
     statut!:string;
+    role!:string;
     stage!: string;
 }

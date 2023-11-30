@@ -25,7 +25,7 @@ import { DeleteEtudiantComponent } from './etudiantDialogs/delete-etudiant/delet
     MatPaginatorModule,
     MatButtonModule,
     MatIconModule,
-    MatButtonModule, 
+    MatButtonModule,
     MatDialogTitle,
     MatDialogContent,
     MatDialogActions,
@@ -35,7 +35,7 @@ import { DeleteEtudiantComponent } from './etudiantDialogs/delete-etudiant/delet
 export default class EtudiantsComponent implements OnInit {
   displayedColumns: any[] = [ "id", "name", "prenom", "matricule", "competences", "telephone", "email",  "statut", 'actions'];
   dataSource: MatTableDataSource<Etudiant>;
-  
+
 
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -118,7 +118,8 @@ export default class EtudiantsComponent implements OnInit {
     window.open(`mailto:${row.email}`, '_blank');
   }
 
-  
+
+
 }
 
 

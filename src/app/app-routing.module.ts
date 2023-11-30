@@ -2,19 +2,18 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './theme/layout/admin/admin.component';
 import { GuestComponent } from './theme/layout/guest/guest.component';
-
+import { HomeComponent } from './theme/layout/home/home.component';
 const routes: Routes = [
   {
-    path: '',
+    path: 'admin',
     component: AdminComponent,
-    
-    
+
     children: [
       {
         path: '',
-        loadComponent: () => import('./components/dashboard/dashboard.component')             
-      },   
-          
+        loadComponent: () => import('./components/dashboard/dashboard.component')
+      },
+
       // default
       {
         path: 'dashboard',
@@ -25,10 +24,10 @@ const routes: Routes = [
         path: 'etudiant',
         loadComponent: () => import('./components/etudiant/etudiants.component')
       },
-     {
-      path: 'stages',
-      loadComponent:() => import('./components/stages/stages.component')
-     },
+      {
+        path: 'stages',
+        loadComponent: () => import('./components/stages/stages.component')
+      },
       {
         path: 'entreprises',
         loadComponent: () => import('./components/entreprises/entreprises.component')
@@ -44,24 +43,30 @@ const routes: Routes = [
       },
 
       {
-        path:'addstage',
+        path: 'addstage',
         loadChildren: () => import('./components/stages/stageDialog/addstage/addstage.component')
       },
 
       {
-        path:'stagedetails',
+        path: 'stagedetails',
         loadComponent: () => import('./components/stagedetails/stagedetails.component')
-        
       },
 
       {
-        path:'addpostulation/:id',
+        path: 'addpostulation/:id',
         loadComponent: () => import('./components/addpostulation/addpostulation.component')
-        
+      },
+      {
+        path: 'viewstage/:id',
+        loadComponent: () => import('./components/stages/stageDialog/viewstage/viewstage.component')
       }
-     
     ]
   },
+  {
+    path: '',
+    component: HomeComponent,
+  },
+
   {
     path: '',
     component: GuestComponent,
@@ -69,9 +74,14 @@ const routes: Routes = [
       {
         path: 'guest',
         loadChildren: () => import('./components/pages/authentication/authentication.module').then((m) => m.AuthenticationModule)
+      },
+      {
+        path: 'login',
+        loadComponent: () => import('./components/pages/authentication/login/login.component')
       }
     ]
-  }
+  },
+
 ];
 
 @NgModule({

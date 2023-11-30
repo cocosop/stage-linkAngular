@@ -1,3 +1,5 @@
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +22,13 @@ import { ConfigurationComponent } from './theme/layout/admin/configuration/confi
 import { GuestComponent } from './theme/layout/guest/guest.component';
 import { HttpClientModule } from '@angular/common/http';
 import StagedetailsComponent from './components/stagedetails/stagedetails.component';
+import { HomeComponent } from './theme/layout/home/home.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatButton, MatButtonModule } from '@angular/material/button';
+import { RouterModule, Route} from '@angular/router';
+import LoginComponent from './components/pages/authentication/login/login.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatRippleModule} from '@angular/material/core';
 
 
 
@@ -39,16 +48,29 @@ import StagedetailsComponent from './components/stagedetails/stagedetails.compon
     NavCollapseComponent,
     ConfigurationComponent,
     GuestComponent,
-    
-    
-    
-    
+    HomeComponent,
+
+
+
+
+
+
+
+
+
   ],
-imports: [BrowserModule, 
-          AppRoutingModule, 
+imports: [BrowserModule,
+          AppRoutingModule,
           SharedModule,
           BrowserAnimationsModule,
           HttpClientModule,
+          MatCardModule,
+          MatButtonModule,
+          MatIconModule,
+          MatMenuModule,
+          MatDialogModule,
+          RouterModule,
+          MatRippleModule
         ],
   providers: [NavigationItem],
   bootstrap: [AppComponent]
