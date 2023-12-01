@@ -2,7 +2,7 @@
   <div>
       <mat-form-field>
           <mat-label>Filtrer la recherche<i class="ti ti-filter" style="margin-left: 15px;"></i></mat-label>
-          <input matInput (keyup)="applyFilter($event)" #input>          
+          <input matInput (keyup)="applyFilter($event)" #input>
       </mat-form-field>
   </div>
   <div class="demo-button-container">
@@ -44,7 +44,7 @@
           <td mat-cell *matCellDef="let row"><a style="color: blue;" [style.cursor]="'pointer'"
             (click)="onClickEmail(row)"
             >{{row.email}}</a> </td>
-      </ng-container>      
+      </ng-container>
     <ng-container matColumnDef="statut">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Statut </th>
       <td mat-cell *matCellDef="let row"> {{row.statut}} </td>
@@ -53,14 +53,14 @@
           <th mat-header-cell *matHeaderCellDef aria-label="row actions"> Actions </th>
           <td mat-cell *matCellDef="let row">
             <a (click)="openDialogView(row)">
-                <i class="ti ti-eye" title="profil etudiant" style="color: blue;"></i>            
+                <i class="ti ti-eye" title="profil etudiant" style="color: blue;"></i>
             </a>&nbsp;&nbsp;
             <a (click)="openDialogEdit(row)">
-                <i class="ti ti-pencil" title="profil etudiant" style="color: brown;"></i>            
+                <i class="ti ti-pencil" title="profil etudiant" style="color: brown;"></i>
             </a>&nbsp;&nbsp;
             <a (click)="openDialogDelete(row)">
-                <i class="ti ti-trash" title="profil etudiant" style="color: red;"></i>            
-            </a>&nbsp;&nbsp;           
+                <i class="ti ti-trash" title="profil etudiant" style="color: red;"></i>
+            </a>&nbsp;&nbsp;
           </td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -72,3 +72,4 @@
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons
       aria-label="Select page of users"></mat-paginator>
 </div>
+
