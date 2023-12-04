@@ -61,8 +61,8 @@ export class HomeComponent implements OnInit {
     this.filteredcards = [];
     this.getStages()
   }
-  public onCardClick(evt: MouseEvent){
-    console.log(evt);
-  }
+
+
+
 
 }

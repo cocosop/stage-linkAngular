@@ -1,25 +1,66 @@
-<app-navigation
-  class="coded-navbar pc-sidebar"
-  [ngClass]="{
-    'navbar-collapsed': navCollapsed,
-    'mob-open': navCollapsedMob
-  }"
-  (NavCollapsedMob)="navMobClick()"
-></app-navigation>
-<app-nav-bar (NavCollapse)="this.navCollapsed = !this.navCollapsed" (NavCollapsedMob)="navMobClick()"></app-nav-bar>
-<div class="pc-container">
-  <div class="coded-wrapper">
-    <div class="coded-content">
-      <div class="coded-inner-content">
-        <app-breadcrumb></app-breadcrumb>
-        <div class="main-body">
-          <div class="page-wrapper">
-            <router-outlet></router-outlet>
-          </div>
-        </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="b-brand">
+      <!-- ========   change your logo hear   ============ -->
+      <div style="margin-left: 0px">
+        <img
+          width="80"
+          height="90"
+          margin-left="-60px"
+          viewBox="0 0 46 55"
+          fill="none"
+          src="assets/images/logo.png"
+          alt=""
+          class="logo logo-lg"
+        />
       </div>
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/forum" routerLinkActive="active-link">Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="about" routerLinkActive="active-link">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="#section1" class="nav-link" routerLinkActive="active-link">Contact</a>
+        </li>
+      </ul>
     </div>
   </div>
-</div>
+</nav>
 
-<app-configuration></app-configuration>
+
+    <div class="coded-content">
+      <mat-tab-group class="tabs" style="background-color: rgb(146, 146, 148);">
+        <mat-tab label="Interships"><app-stages></app-stages></mat-tab>
+        <mat-tab label="My Applies">
+          <div class="formAdd">
+            <mat-form-field style="width: 400px;" >
+              <mat-label >Titre</mat-label>
+              <input matInput>
+            </mat-form-field>
+            <mat-form-field style="width: 400px;">
+              <mat-label >Localisation</mat-label>
+              <input matInput>
+            </mat-form-field>
+            <mat-form-field style="width: 400px; height: 200px;">
+              <mat-label >Description</mat-label>
+              <textarea matInput style="width: 400px; height: 200px;"></textarea>
+            </mat-form-field>
+            <button mat-raised-button style="color: #162E58;" (click)="save()">
+              Submit
+          </button>
+          </div>
+        </mat-tab>
+        <mat-tab label="Student" ></mat-tab>
+        <mat-tab label="My Applies"></mat-tab>
+      </mat-tab-group>
+    </div>
+
+
+

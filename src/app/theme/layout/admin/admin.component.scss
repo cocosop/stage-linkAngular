@@ -1,0 +1,41 @@
+.formAdd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 80px;
+  margin-top: 50px;
+
+}
+.container{
+  margin-top: 1000px;
+}
+
+.formAdd input{
+  width: 2000px;
+  background-color: rgb(202, 198, 198);
+}
+
+
+.navbar{
+background-color: rgb(247, 246, 249);
+height: 50px;
+
+  opacity: 1;
+ }
+
+//  .navbar:not(.active) {
+
+//    opacity: 0.5;
+//  }
+//  .navbar-light .navbar-nav .nav-link
+//  {
+//      color: var(--secondary-color);
+
+//  }
+//  .navbar-light .navbar-nav .nav-link.active-link
+//  {
+//      color: var(--primary-color);
+//      text-decoration: underline;
+
+//  }
+

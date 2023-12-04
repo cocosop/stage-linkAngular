@@ -1,9 +1,15 @@
 // Angular import
-import { Component, NgZone } from '@angular/core';
+import { Component, Inject, NgZone } from '@angular/core';
 import { Location, LocationStrategy } from '@angular/common';
 
 // Project import
 import { BerryConfig } from '../../../app-config';
+import { Navigation, NavigationItem } from './navigation/navigation';
+import StagesComponent from 'src/app/components/stages/stages.component';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { StagesModel } from 'src/app/components/stages/stages-model';
+import { StagesService } from 'src/app/components/stages/stages.service';
 
 @Component({
   selector: 'app-admin',
@@ -16,13 +22,16 @@ export class AdminComponent {
   navCollapsed: boolean;
   navCollapsedMob = false;
   windowWidth: number;
-
+  navigation: any;
   // Constructor
   constructor(
+    private service: StagesService,
+    public nav: NavigationItem,
     private zone: NgZone,
     private location: Location,
     private locationStrategy: LocationStrategy
   ) {
+    this.navigation = this.nav.get();
     this.berryConfig = BerryConfig;
 
     let current_url = this.location.path();
@@ -50,4 +59,25 @@ export class AdminComponent {
       this.navCollapsedMob = !this.navCollapsedMob;
     }
   }
+  formAdd = new FormGroup({
+    titre: new FormControl('', [Validators.required, Validators.required]),
+    localisation: new FormControl('', [Validators.required, Validators.required]),
+    description: new FormControl('', [Validators.required, Validators.required]),
+  })
+  fileName: any;
+
+  ngOnInit(): void {
+
+  }
+
+  save(): void {
+    if (this.formAdd.status === 'VALID') {
+      const stage = this.formAdd.value as unknown as StagesModel;
+      this.service.addStage(stage).subscribe((stage) => {
+        console.log(stage)
+        this.ngOnInit()
+      });
+    }
+  }
+
 }

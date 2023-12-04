@@ -1,4 +1,4 @@
-<div class="auth-main">
+<!-- <div class="auth-main">
   <div class="auth-wrapper v3">
     <div class="auth-form">
       <div class="card my-5">
@@ -38,7 +38,7 @@
             </h5>
           </div>
           <div class="d-grid mt-4">
-            <button [routerLink]="['/admin/dashboard']" type="button" class="btn btn-secondary">Sign In</button>
+            <button ([routerLink]="['/admin/dashboard']") type="button" class="btn btn-secondary">Sign In</button>
           </div>
           <hr />
           <h5 class="d-flex justify-content-center">
@@ -48,4 +48,36 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
+
+<mat-card>
+  <mat-card-header>
+      <h2>User Login</h2>
+  </mat-card-header>
+  <mat-card-content>
+      <form class="example-form" [formGroup]="loginform" (ngSubmit)="proceedlogin()">
+        <mat-form-field  appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+          <mat-error
+              *ngIf="loginform.controls.email.hasError('email') && !loginform.controls.email.hasError('required')">
+              Email incorrect
+          </mat-error>
+          <mat-error *ngIf="loginform.controls.email.hasError('required')">
+              Champ requis
+          </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Mot de Passe</mat-label>
+        <input matInput formControlName="motDePasse">
+        <mat-error *ngIf="loginform.controls.motDePasse.status ==='INVALID'">
+            Champ requis
+        </mat-error>
+    </mat-form-field>
+            <div>
+              <button mat-raised-button color="primary">Login</button>
+              <a routerLink="/register" mat-raised-button color="accent">New User?</a>
+            </div>
+        </form>
+  </mat-card-content>
+</mat-card>

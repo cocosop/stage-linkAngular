@@ -23,15 +23,15 @@ import { ViewentrepriseComponent } from './entrepriseDialog/viewentreprise/viewe
   selector: 'app-entreprises',
   standalone: true,
   imports: [
-    CommonModule, 
-    SharedModule, 
+    CommonModule,
+
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
     MatButtonModule,
     MatIconModule,
-    MatButtonModule, 
+    MatButtonModule,
     MatDialogTitle,
     MatDialogContent,
     MatDialogActions,
@@ -41,7 +41,7 @@ import { ViewentrepriseComponent } from './entrepriseDialog/viewentreprise/viewe
 })
 export default class EntreprisesComponent implements OnInit{
   displayedColumns: any[] = [ "id", "nomEntreprise", "responsable", "telephone", "email", "adresse", "stage","statut","dateInscription", 'actions'];
-  dataSource: MatTableDataSource<Entreprises>; 
+  dataSource: MatTableDataSource<Entreprises>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   entreprise: Entreprises[] = [];
 

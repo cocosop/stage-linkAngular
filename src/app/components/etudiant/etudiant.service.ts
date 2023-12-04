@@ -23,6 +23,7 @@ export class EtudiantService {
   getStudent(id: any): Observable<Etudiant> {
     return this.http.get<Etudiant>(`${this.BASE_URL}/${id}`)
   }
+
   deleteStudent(id: any): Observable<Etudiant> {
     return this.http.delete<Etudiant>(`${this.BASE_URL}/${id}`)
   }

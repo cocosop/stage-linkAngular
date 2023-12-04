@@ -1,3 +1,4 @@
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { NgModule } from '@angular/core';
@@ -29,6 +30,12 @@ import { RouterModule, Route} from '@angular/router';
 import LoginComponent from './components/pages/authentication/login/login.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatRippleModule} from '@angular/material/core';
+import StagesComponent from './components/stages/stages.component';
+import PostulationsComponent from './components/postulations/postulations.component';
+import AddstageComponent from './components/stages/stageDialog/addstage/addstage.component';
+import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -60,6 +67,8 @@ import {MatRippleModule} from '@angular/material/core';
 
 
 
+
+
   ],
 imports: [BrowserModule,
           AppRoutingModule,
@@ -73,6 +82,14 @@ imports: [BrowserModule,
           MatDialogModule,
           RouterModule,
           MatRippleModule,
+          MatTabsModule,
+          MatFormFieldModule,
+
+          MatInputModule,
+          MatSelectModule,
+          StagesComponent,
+          PostulationsComponent,
+          AddstageComponent
 
         ],
   providers: [NavigationItem],

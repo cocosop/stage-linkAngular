@@ -76,7 +76,7 @@ const routes: Routes = [
         loadChildren: () => import('./components/pages/authentication/authentication.module').then((m) => m.AuthenticationModule)
       },
       {
-        path: 'login',
+        path: 'login/:usertype',
         loadComponent: () => import('./components/pages/authentication/login/login.component')
       }
     ]
