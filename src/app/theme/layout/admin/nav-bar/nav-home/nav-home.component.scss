@@ -1,0 +1,34 @@
+.navbar{
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  //background-color: rgb(145, 145, 217);
+  z-index: 1;
+
+ }
+
+ .navbar:not(.active) {
+
+  opacity: 1;
+ }
+ .navbar-light .navbar-nav .nav-link
+ {
+     color: var(--secondary-color);
+
+ }
+ .navbar-light .navbar-nav .nav-link.active-link
+ {
+     color: var(--primary-color);
+     text-decoration: underline;
+
+ }
+
+ .home-nav-style{
+background-color: yellow;
+ }
+
+ .admin-nav-style{
+  background-color: red;
+ }

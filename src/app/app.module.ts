@@ -36,6 +36,8 @@ import AddstageComponent from './components/stages/stageDialog/addstage/addstage
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
+import { AdministratorComponent } from './theme/layout/administrator/administrator.component';
+import { NavHomeComponent } from './theme/layout/admin/nav-bar/nav-home/nav-home.component';
 
 
 
@@ -57,17 +59,8 @@ import { MatInputModule } from '@angular/material/input';
     ConfigurationComponent,
     GuestComponent,
     HomeComponent,
-
-
-
-
-
-
-
-
-
-
-
+    AdministratorComponent,
+    NavHomeComponent
 
   ],
 imports: [BrowserModule,
@@ -84,7 +77,6 @@ imports: [BrowserModule,
           MatRippleModule,
           MatTabsModule,
           MatFormFieldModule,
-
           MatInputModule,
           MatSelectModule,
           StagesComponent,

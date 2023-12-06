@@ -476,90 +476,6 @@
       "mot-de-passe": "mdp456",
       "dateInscription": "2022-02-20T09:00:00Z",
       "statut": true
-    },
-    {
-      "id": 17
-    },
-    {
-      "id": 18
-    },
-    {
-      "id": 19
-    },
-    {
-      "id": 20
-    },
-    {
-      "email": "carlosgarcia@example.com",
-      "motDePasse": "password3",
-      "matricule": "MAT0",
-      "id": 21
-    },
-    {
-      "email": "carlosgarcia@example.com",
-      "motDePasse": "password3",
-      "matricule": "MAT1",
-      "id": 22
-    },
-    {
-      "email": "carlosgarcia@example.com",
-      "motDePasse": "password3",
-      "matricule": "MAT0",
-      "id": 23
-    },
-    {
-      "email": "carlosgarcia@example.com",
-      "motDePasse": "password3",
-      "matricule": "MAT1",
-      "id": 24
-    },
-    {
-      "email": "carlosgarcia@example.com",
-      "motDePasse": "password3",
-      "matricule": "MAT0",
-      "id": 25
-    },
-    {
-      "email": "carlosgarcia@example.com",
-      "motDePasse": "password3",
-      "matricule": "MAT1",
-      "id": 26
-    },
-    {
-      "email": "carlosgarcia@example.com",
-      "motDePasse": "password3",
-      "matricule": "MAT2",
-      "id": 27
-    },
-    {
-      "email": "carlosgarcia@example.com",
-      "motDePasse": "password3",
-      "matricule": "MAT0",
-      "id": 28
-    },
-    {
-      "email": "carlosgarcia@example.com",
-      "motDePasse": "password3",
-      "matricule": "MAT1",
-      "id": 29
-    },
-    {
-      "email": "carlosgarcia@example.com",
-      "motDePasse": "password3",
-      "matricule": "MAT2",
-      "id": 30
-    },
-    {
-      "email": "carlosgarcia@example.com",
-      "motDePasse": "password3",
-      "matricule": "MAT0",
-      "id": 31
-    },
-    {
-      "email": "marie.durand@microsoft.com",
-      "motDePasse": "password456",
-      "matricule": "MAT0",
-      "id": 32
     }
   ],
   "entreprise": [
@@ -841,6 +757,31 @@
       "dateInscription": "2022-01-01",
       "role": "Entreprise",
       "stage": "Marketing"
+    },
+    {
+      "email": "carlosgarcia@example.com",
+      "motDePasse": "password3",
+      "id": 26
+    },
+    {
+      "email": "david@omega.com",
+      "motDePasse": "password4",
+      "id": 27
+    },
+    {
+      "email": "david@omega.com",
+      "motDePasse": "password24",
+      "id": 28
+    },
+    {
+      "email": "patricia@psi.com",
+      "motDePasse": "password23",
+      "id": 29
+    },
+    {
+      "email": "david@omega.com",
+      "motDePasse": "password24",
+      "id": 30
     }
   ]
 }

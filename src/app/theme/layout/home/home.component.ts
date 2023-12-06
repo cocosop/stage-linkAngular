@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
 import { StagesModel } from 'src/app/components/stages/stages-model';
 import { StagesService } from 'src/app/components/stages/stages.service';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,7 @@ import { StagesService } from 'src/app/components/stages/stages.service';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
+
   stage: StagesModel[] =[];
   totalCount: number=0;
   currentPageNumber= 1;
@@ -21,15 +23,17 @@ export class HomeComponent implements OnInit {
   centered = false;
   disabled = false;
   unbounded = false;
-
+  currentRoute: string;
   radius: number;
   color: string;
-  constructor(private stageService: StagesService, public dialog: MatDialog){
+  constructor(private stageService: StagesService, public dialog: MatDialog, private route: ActivatedRoute){
     this.filteredcards = this.stage;
-  }
 
 
+
+}
   ngOnInit(): void {
+
   this.getStages();
 
   }

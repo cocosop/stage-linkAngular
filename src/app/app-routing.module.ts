@@ -3,10 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './theme/layout/admin/admin.component';
 import { GuestComponent } from './theme/layout/guest/guest.component';
 import { HomeComponent } from './theme/layout/home/home.component';
+import { AdministratorComponent } from './theme/layout/administrator/administrator.component';
+import { authGuardGuard } from './components/guard/auth-guard.guard';
 const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
+    canActivate: [authGuardGuard],
 
     children: [
       {
@@ -68,8 +71,14 @@ const routes: Routes = [
   },
 
   {
+    path: 'administrator',
+    component: AdministratorComponent
+
+  },
+  {
     path: '',
     component: GuestComponent,
+
     children: [
       {
         path: 'guest',
