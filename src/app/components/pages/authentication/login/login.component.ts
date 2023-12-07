@@ -12,11 +12,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Etudiant } from 'src/app/components/etudiant/etudiant';
 import { Entreprises } from 'src/app/components/entreprises/entreprises';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, RouterModule, MatCardModule, MatFormFieldModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterModule, MatCardModule, MatFormFieldModule, ReactiveFormsModule, MatIconModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })

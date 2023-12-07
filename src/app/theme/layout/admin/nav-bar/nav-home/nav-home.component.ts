@@ -11,9 +11,11 @@ export class NavHomeComponent implements OnInit{
   constructor(private route: ActivatedRoute){
   }
   currentRoute: string;
+  navClasses: string;
   ngOnInit(): void {
     this.route.url.subscribe((event) => {
       this.currentRoute=event[0].path;
+      this.currentRoute=='admin'? 'admin-nav-style':'home-nav-style'
 
     });
   }

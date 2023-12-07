@@ -5,6 +5,7 @@ import { GuestComponent } from './theme/layout/guest/guest.component';
 import { HomeComponent } from './theme/layout/home/home.component';
 import { AdministratorComponent } from './theme/layout/administrator/administrator.component';
 import { authGuardGuard } from './components/guard/auth-guard.guard';
+import { ErrorComponent } from './theme/layout/error/error.component';
 const routes: Routes = [
   {
     path: 'admin',
@@ -70,6 +71,8 @@ const routes: Routes = [
     component: HomeComponent,
   },
 
+
+
   {
     path: 'administrator',
     component: AdministratorComponent
@@ -89,6 +92,11 @@ const routes: Routes = [
         loadComponent: () => import('./components/pages/authentication/login/login.component')
       }
     ]
+  },
+
+  {
+    path:'**',
+    component:ErrorComponent,
   },
 
 ];

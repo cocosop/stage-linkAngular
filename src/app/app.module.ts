@@ -60,7 +60,8 @@ import { NavHomeComponent } from './theme/layout/admin/nav-bar/nav-home/nav-home
     GuestComponent,
     HomeComponent,
     AdministratorComponent,
-    NavHomeComponent
+    NavHomeComponent,
+    HomeComponent
 
   ],
 imports: [BrowserModule,
