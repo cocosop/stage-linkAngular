@@ -41,12 +41,13 @@ img {
 }
 
 /*=============== LOGIN ===============*/
-.login {
-  position: relative;
-  height: 100vh;
-  display: grid;
-  align-items: center;
-}
+// .login {
+//   position: relative;
+//   height: 100vh;
+//   display: grid;
+//   align-items: center;
+//   max-width:  10000px;
+// }
 
 .login__bg {
   position: absolute;
@@ -59,6 +60,7 @@ img {
 .login__form {
   position: relative;
   margin-inline: 1.5rem;
+ max-width: 100%;
   background-color: hsla(0, 0%, 100%, .01);
   border: 2px solid hsla(0, 0%, 100%, .7);
   padding: 2.5rem 1rem;

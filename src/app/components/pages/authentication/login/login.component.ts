@@ -13,16 +13,19 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Etudiant } from 'src/app/components/etudiant/etudiant';
 import { Entreprises } from 'src/app/components/entreprises/entreprises';
 import { MatIconModule } from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, RouterModule, MatCardModule, MatFormFieldModule, ReactiveFormsModule, MatIconModule],
+  imports: [CommonModule, RouterModule, MatCardModule, MatFormFieldModule, ReactiveFormsModule, MatIconModule,MatInputModule,FormsModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export default class LoginComponent implements OnInit {
   toastr: ToastrService;
+  hide = true;
   constructor(
     private route: ActivatedRoute,
     private router: Router,

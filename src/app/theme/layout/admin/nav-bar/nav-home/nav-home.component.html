@@ -1,25 +1,17 @@
-<nav class="navbar navbar-expand-lg {{navClasses}}`">
+<nav [ngClass]="{'navbar navbar-expand-lg admin-nav-style': currentRoute == 'admin','navbar navbar-expand-lg home-nav-style': currentRoute != 'admin' }">
   <div class="container-fluid">
     <a class="b-brand">
       <!-- ========   change your logo hear   ============ -->
       <div style="margin-left: -19px">
-        <img
-
-          width="60"
-          height="60"
-
-          viewBox="0 0 46 55"
-          fill="none"
-          src="assets/images/logo.png"
-          alt=""
-          class="logo logo-lg"
-        />
+        <img width="60" height="60" viewBox="0 0 46 55" fill="none" src="assets/images/logo.png" alt=""
+          class="logo logo-lg" />
       </div>
     </a>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+          <a class="nav-link" routerLink="" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/forum" routerLinkActive="active-link">Forum</a>
@@ -31,11 +23,9 @@
           <a href="#section1" class="nav-link" routerLinkActive="active-link">Contact</a>
         </li>
         <li class="nav-item">
-          The current Route Is {{currentRoute}}
-
+         
         </li>
       </ul>
     </div>
   </div>
 </nav>
-
