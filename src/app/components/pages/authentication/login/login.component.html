@@ -1,37 +1,3 @@
-<!--
-
-<mat-card>
-  <mat-card-header>
-      <h2>{{usertype}} Login</h2>
-  </mat-card-header>
-  <mat-card-content>
-      <form class="example-form" [formGroup]="loginform" (ngSubmit)="proceedlogin()">
-        <mat-form-field  appearance="outline">
-          <mat-label>Email</mat-label>
-          <input matInput formControlName="email">
-          <mat-error
-              *ngIf="loginform.controls.email.hasError('email') && !loginform.controls.email.hasError('required')">
-              Email incorrect
-          </mat-error>
-          <mat-error *ngIf="loginform.controls.email.hasError('required')">
-              Champ requis
-          </mat-error>
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Mot de Passe</mat-label>
-        <input matInput formControlName="motDePasse">
-        <mat-error *ngIf="loginform.controls.motDePasse.status ==='INVALID'">
-            Champ requis
-        </mat-error>
-    </mat-form-field>
-            <div>
-              <button mat-raised-button color="primary">Login</button>
-              <a routerLink="/register" mat-raised-button color="accent">New User?</a>
-            </div>
-        </form>
-  </mat-card-content>
-</mat-card> -->
-
 <div class="login">
   <img src="./../../../../../assets/img/login-bg.png" alt="image" class="login__bg" />
 <div style="display: flex; flex-direction: row;">
@@ -73,11 +39,12 @@
     <button mat-raised-button class="login__button" color="primary">Login</button>
     <div class="login__register"> Don't have an account? <a href="#">Register</a> </div>
   </form>
+  
   <form action="" class="login__form" [formGroup]="loginform" (ngSubmit)="proceedlogin()">
     <h1 class="login__title"
       ><h2>{{ usertype }} Login</h2></h1
     >
-    
+
     <div class="login__inputs">
       <div >
         <mat-form-field appearance="outline">
@@ -111,7 +78,7 @@
     <div class="login__register"> Don't have an account? <a href="#">Register</a> </div>
   </form>
 </div>
- 
+
 </div>
 
 

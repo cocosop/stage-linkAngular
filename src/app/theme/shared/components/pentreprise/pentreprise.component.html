@@ -1,0 +1,82 @@
+<div class="form_class">
+  <form class="example-form" [formGroup]="formModif" >
+    <h1>Company Profile</h1>
+    <mat-form-field   class="example-full-width">
+      <mat-label>Nom de l'entreprise</mat-label>
+      <input matInput formControlName="nomEntreprise">
+      <mat-icon matSuffix>business</mat-icon>
+      <mat-error *ngIf="formModif.controls.nomEntreprise.status ==='INVALID'">
+        Champ requis
+    </mat-error>
+    </mat-form-field>
+    <mat-form-field   class="example-full-width">
+      <mat-label>Responsable</mat-label>
+      <input matInput formControlName="responsable">
+      <mat-icon matSuffix>person</mat-icon>
+      <mat-error *ngIf="formModif.controls.responsable.status ==='INVALID'">
+        Champ requis
+    </mat-error>
+    </mat-form-field>
+    <mat-form-field   class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email">
+      <mat-icon matSuffix>email</mat-icon>
+      <mat-error *ngIf="formModif.controls.email.status ==='INVALID'">
+        Champ requis
+    </mat-error>
+    </mat-form-field>
+    <mat-form-field   class="example-full-width">
+      <mat-label>Telephone</mat-label>
+      <input matInput formControlName="telephone">
+      <mat-icon matSuffix>phone</mat-icon>
+      <mat-error *ngIf="formModif.controls.telephone.status ==='INVALID'">
+        Champ requis
+    </mat-error>
+    </mat-form-field>
+    <div class="example" >
+      <mat-form-field   class="example-full-width" class="date_style">
+        <mat-label>Adresse</mat-label>
+        <mat-icon matSuffix>location_on</mat-icon>
+        <input matInput formControlName="adresse">
+        <mat-error *ngIf="formModif.controls.adresse.status ==='INVALID'">
+          Champ requis
+      </mat-error>
+      </mat-form-field>
+      <mat-form-field color="accent" class="date_style" style="margin-left: 10px;">
+        <mat-label>Subscription date</mat-label>
+        <input matInput [matDatepicker]="picker2" formControlName="dateInscription">
+        <mat-error *ngIf="formModif.controls.dateInscripition.status ==='INVALID'">
+          Champ requis
+      </mat-error>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+
+    </div>
+    <mat-form-field class="example-full-width">
+        <mat-label>Mot de Passe</mat-label>
+        <input matInput formControlName="motDePasse" >
+        <mat-icon matSuffix>vpn_key</mat-icon>
+        <mat-error *ngIf="formModif.controls.motDePasse.status ==='INVALID'">
+          Champ requis
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Statut</mat-label>
+      <mat-icon matSuffix>verified_user</mat-icon>
+      <mat-select formControlName="statut">
+        
+          <mat-option value="Actif">Actif</mat-option>
+          <mat-option value="Inactif">Inactif</mat-option>
+      </mat-select>
+      <mat-error *ngIf="formModif.controls.statut.status ==='INVALID'">
+          Champ requis
+      </mat-error>
+  </mat-form-field>
+    <div class="example-button-row">
+      <button mat-raised-button color="primary"  (click)="edit()">Update</button>
+      <button mat-raised-button color="warn" type= "reset" class = "btn" ng-click= "cancelEdit ()" >Cancel</button>
+    </div>
+  </form>
+</div>

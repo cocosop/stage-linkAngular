@@ -38,6 +38,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { AdministratorComponent } from './theme/layout/administrator/administrator.component';
 import { NavHomeComponent } from './theme/layout/admin/nav-bar/nav-home/nav-home.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 
 
@@ -82,7 +83,8 @@ imports: [BrowserModule,
           MatSelectModule,
           StagesComponent,
           PostulationsComponent,
-          AddstageComponent
+          AddstageComponent,
+          MatButtonToggleModule
 
         ],
   providers: [NavigationItem],

@@ -1,9 +1,68 @@
-<div class="card">
-  <div class="card-header">
-    <h5 *ngIf="!customHeader">{{ cardTitle }}</h5>
-  </div>
-  <div class="card-block">
-    <ng-content></ng-content>
-    
-  </div>
+<div class="form_class">
+  <form class="example-form" [formGroup]="formAdd" (ngSubmit)="save()">
+    <h1>Internship add form</h1>
+    <mat-form-field   class="example-full-width">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="titre">      
+      <mat-error *ngIf="formAdd.controls.titre.status ==='INVALID'">
+        Champ requis
+    </mat-error>
+    </mat-form-field>
+    <mat-form-field   class="example-full-width">
+      <mat-label>Company Name</mat-label>
+      <input matInput formControlName="nomEntreprise">      
+      <mat-error *ngIf="formAdd.controls.titre.status ==='INVALID'">
+        Champ requis
+    </mat-error>
+    </mat-form-field>
+    <mat-form-field   class="example-full-width">
+      <mat-label>Location</mat-label>
+      <input matInput formControlName="localisation">      
+      <mat-error *ngIf="formAdd.controls.titre.status ==='INVALID'">
+        Champ requis
+    </mat-error>
+    </mat-form-field>
+    <mat-form-field   class="example-full-width">
+      <mat-label>Business domain</mat-label>
+      <input matInput formControlName="domaine">      
+      <mat-error *ngIf="formAdd.controls.titre.status ==='INVALID'">
+        Champ requis
+    </mat-error>
+    </mat-form-field>
+    <div class="example" >
+     
+      <mat-form-field color="accent" class="date_style">
+        <mat-label>Start date</mat-label>
+        <input matInput [matDatepicker]="picker1" formControlName="dateDebut">
+        <mat-error *ngIf="formAdd.controls.titre.status ==='INVALID'">
+          Champ requis
+      </mat-error>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field color="accent" class="date_style" style="margin-left: 10px;">
+        <mat-label>End date</mat-label>
+        <input matInput [matDatepicker]="picker2" formControlName="dateFin">
+        <mat-error *ngIf="formAdd.controls.titre.status ==='INVALID'">
+          Champ requis
+      </mat-error>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+      
+    </div>
+    <mat-form-field class="example-full-width">
+        <mat-label>Descriptions</mat-label>
+        <textarea matInput formControlName="description" ></textarea>
+        <mat-error *ngIf="formAdd.controls.titre.status ==='INVALID'">
+          Champ requis
+      </mat-error>
+    </mat-form-field>         
+    <div class="example-button-row">      
+      <button mat-raised-button color="primary" (click)="save()">Save</button>      
+      <button mat-raised-button color="warn" type= "reset" class = "btn" ng-click= "cancelEdit ()" >Cancel</button>          
+    </div>
+  </form>
 </div>
