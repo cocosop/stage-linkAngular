@@ -20,7 +20,7 @@ export class PentrepriseComponent {
     responsable: new FormControl('', [Validators.required, Validators.required]),
     adresse: new FormControl('', [Validators.required, Validators.required]),
     telephone: new FormControl('', [Validators.required, Validators.required]),
-    email: new FormControl('', [Validators.required, Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
     motDePasse: new FormControl('', [Validators.required, Validators.required]),
     dateInscripition: new FormControl('', [Validators.required, Validators.required]),
     statut: new FormControl('', [Validators.required, Validators.required]),

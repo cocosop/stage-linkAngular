@@ -1,23 +1,26 @@
 <div class="form_class">
   <form class="example-form" [formGroup]="formModif" >
     <h1>Company Profile</h1>
-    <mat-form-field   class="example-full-width">
-      <mat-label>Nom de l'entreprise</mat-label>
-      <input matInput formControlName="nomEntreprise">
-      <mat-icon matSuffix>business</mat-icon>
-      <mat-error *ngIf="formModif.controls.nomEntreprise.status ==='INVALID'">
-        Champ requis
-    </mat-error>
-    </mat-form-field>
-    <mat-form-field   class="example-full-width">
-      <mat-label>Responsable</mat-label>
-      <input matInput formControlName="responsable">
-      <mat-icon matSuffix>person</mat-icon>
-      <mat-error *ngIf="formModif.controls.responsable.status ==='INVALID'">
-        Champ requis
-    </mat-error>
-    </mat-form-field>
-    <mat-form-field   class="example-full-width">
+    
+      <mat-form-field   class="example-full-width">
+        <mat-label>Nom de l'entreprise</mat-label>
+        <input matInput formControlName="nomEntreprise">
+        <mat-icon matSuffix>business</mat-icon>
+        <mat-error *ngIf="formModif.controls.nomEntreprise.status ==='INVALID'">
+          Champ requis
+      </mat-error>
+      </mat-form-field>
+      <mat-form-field   class="example-full-width">
+        <mat-label>Responsable</mat-label>
+        <input matInput formControlName="responsable">
+        <mat-icon matSuffix>person</mat-icon>
+        <mat-error *ngIf="formModif.controls.responsable.status ==='INVALID'">
+          Champ requis
+      </mat-error>
+      </mat-form-field>
+      <div style="display: flex; flex-direction: row;">
+  
+    <mat-form-field   style="width: 500px;">
       <mat-label>Email</mat-label>
       <input matInput formControlName="email">
       <mat-icon matSuffix>email</mat-icon>
@@ -25,7 +28,7 @@
         Champ requis
     </mat-error>
     </mat-form-field>
-    <mat-form-field   class="example-full-width">
+    <mat-form-field   style="width: 500px; margin-left: 10px;">
       <mat-label>Telephone</mat-label>
       <input matInput formControlName="telephone">
       <mat-icon matSuffix>phone</mat-icon>
@@ -33,6 +36,7 @@
         Champ requis
     </mat-error>
     </mat-form-field>
+      </div>
     <div class="example" >
       <mat-form-field   class="example-full-width" class="date_style">
         <mat-label>Adresse</mat-label>
@@ -65,8 +69,7 @@
     <mat-form-field class="example-full-width">
       <mat-label>Statut</mat-label>
       <mat-icon matSuffix>verified_user</mat-icon>
-      <mat-select formControlName="statut">
-        
+      <mat-select formControlName="statut">        
           <mat-option value="Actif">Actif</mat-option>
           <mat-option value="Inactif">Inactif</mat-option>
       </mat-select>

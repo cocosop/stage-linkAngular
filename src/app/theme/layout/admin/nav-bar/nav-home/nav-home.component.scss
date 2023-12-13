@@ -1,34 +1,108 @@
-.navbar{
-  height: 50px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  //background-color: rgb(145, 145, 217);
-  z-index: 1;
+// .navbar{
+//   height: 50px;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   //background-color: rgb(145, 145, 217);
+//   z-index: 1000;
 
- }
+//  }
 
- .navbar:not(.active) {
+//  .navbar:not(.active) {
 
-  opacity: 1;
- }
- .navbar-light .navbar-nav .nav-link
- {
-     color: var(--secondary-color);
+//   opacity: 1;
+//  }
+//  .navbar-light .navbar-nav .nav-link
+//  {
+//      color: var(--secondary-color);
+    
 
- }
- .navbar-light .navbar-nav .nav-link.active-link
- {
-     color: var(--primary-color);
-     text-decoration: underline;
+//  }
+//  .navbar-light .navbar-nav .nav-link.active-link
+//  {
+//      color: var(--primary-color);
+//      text-decoration: underline;
+//      margin-left: 100px;
 
- }
+//  }
 
  .home-nav-style{
-background-color: yellow;
+    background-color:  rgb(230, 230, 247);
+    height:60px;
+.settings__profil{
+    border: rgb(104, 121, 229) solid; 
+    border-radius: 20px; 
+    width: 80px; 
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    margin-top: -2px;
+    .navbar{
+        height: 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        
+        z-index: 1000;
+      
+       }
+      
+    .navbar:not(.active) {
+
+        opacity: 1;
+       }
+       .navbar-light .navbar-nav .nav-link
+       {
+           color: var(--secondary-color);
+           margin-right: 30px;
+          
+      
+       }
+       .navbar-light .navbar-nav .nav-link.active-link
+       {
+           color: var(--primary-color);
+           text-decoration: underline;
+           
+      
+       }     
+      
+
+
+}
+
+.profil{
+    color: rgb(49, 71, 240);
+    display: block;
+    
+}
  }
 
  .admin-nav-style{
-  background-color: rgb(188, 219, 245);
+    background-color:  rgb(230, 230, 247);
+    height:60px;
+.settings__profil{
+    border: rgb(104, 121, 229) solid; 
+    border-radius: 20px; 
+    width: 80px; 
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    margin-top: -2px;
+    .navbar{
+        height: 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        
+        z-index: 1000;
+      
+       }
  }
+}
+.drill{
+    display: flex;
+    flex-direction: row;
+}

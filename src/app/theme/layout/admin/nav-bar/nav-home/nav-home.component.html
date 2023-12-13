@@ -1,31 +1,40 @@
-<nav [ngClass]="{'navbar navbar-expand-lg admin-nav-style': currentRoute == 'admin','navbar navbar-expand-lg home-nav-style': currentRoute != 'admin' }">
+<nav class="navbar navbar-expand-lg "
+  [ngClass]="{'admin-nav-style': currentRoute == 'admin','home-nav-style': currentRoute != 'admin' }">
   <div class="container-fluid">
     <a class="b-brand">
       <!-- ========   change your logo hear   ============ -->
       <div style="margin-left: -19px">
-        <img width="60" height="60" viewBox="0 0 46 55" fill="none" src="assets/images/logo.png" alt=""
+        <img width="70" height="70" viewBox="0 0 46 55" fill="none" src="assets/images/logo.png" alt=""
           class="logo logo-lg" />
       </div>
     </a>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="" routerLinkActive="active-link"
-            [routerLinkActiveOptions]="{ exact: true }">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/forum" routerLinkActive="active-link">Forum</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="about" routerLinkActive="active-link">About</a>
-        </li>
-        <li class="nav-item">
-          <a href="#section1" class="nav-link" routerLinkActive="active-link">Contact</a>
-        </li>
-        <li class="nav-item">
+    <div class="drill" >      
+        <button mat-button class="nav-item" style="color: blue;">
+          <a class="nav-link" href="/" routerLinkActive="active-link"
+            >Home</a>
+        </button>
+
+        <button mat-button class="nav-item" style="color: blue;" >
+          <a class="nav-link" href="#section1" >
+            Interships</a>
+        </button>
+
+        <button mat-button class="nav-item" style="color: blue;">
+          <a class="nav-link" href="#section2" 
+            >Contact</a>
+        </button>
+        <button mat-button class="settings__profil" [matMenuTriggerFor]="menu" >
+              <mat-icon class="profil">person</mat-icon>
+              <mat-icon class="profil" >settings</mat-icon>
+        </button>         
          
-        </li>
-      </ul>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item><mat-icon matSuffix>person</mat-icon>My profil</button>
+            
+            <a href="/login/student" mat-menu-item ><mat-icon style="color: red;" matSuffix>exit_to_app</mat-icon><a style="color: red;">Logout</a></a>
+          </mat-menu>       
+      
+      
     </div>
   </div>
 </nav>

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
 import { StagesModel } from 'src/app/components/stages/stages-model';
 import { StagesService } from 'src/app/components/stages/stages.service';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import {MatPaginator} from '@angular/material/paginator';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
-
+  value = 'Clear me'
   stage: StagesModel[] =[];
   totalCount: number=0;
   currentPageNumber= 1;
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit {
   currentRoute: string;
   radius: number;
   color: string;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   constructor(private stageService: StagesService, public dialog: MatDialog, private route: ActivatedRoute){
     this.filteredcards = this.stage;
 
@@ -35,36 +37,71 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
   this.getStages();
+ 
 
   }
 
   getStages(  ){
-    this.stageService.GetAllStage(this.currentPageNumber, this.pageSize)
+    this.stageService.get()
     .subscribe((Response)=>{
-      this.stage = Response.body as StagesModel[];
-
-      console.log
-      this.totalCount = Response.headers.getAll('X-Total-Count')
-      ? Number(Response.headers.getAll('X-Total-Count'))
-      : 0;
+      this.stage = Response as StagesModel[];
+      this.stage =this.stage.map(item=>{
+        const deuxSemaines = 1000 * 60 * 60 * 24 * 14;
+        const dateString = item.dateDebut; // Assurez-vous que la date est correctement formatée
+        const date = new Date(dateString).getTime();
+        console.log(date)
+        const difference =date- Date.now() ;
+        console.log(date)
+      
+    const joursEcoules = Math.floor(difference / (1000 * 60 * 60 * 24 *14));    
+        return {
+          ...item,
+          nombreJours:joursEcoules
+        }
+      })
+      
       this.filteredcards=this.stage
+      this.totalCount = this.stage.length;
+      this.filteredcards = this.stage.slice(0, this.pageSize);
+      this.paginator.page.subscribe((event) => {
+        const startIndex = event.pageIndex * event.pageSize;
+        let endIndex = startIndex + event.pageSize;
+        if (endIndex > this.totalCount) {
+          endIndex = this.totalCount;
+        }
+        this.filteredcards = this.stage.slice(startIndex, endIndex);
+       
+      }
+      );
+     
      })
   }
-  filterCardes() {
-    this.filteredcards = this.stage.filter(card => {
-      return card.description.toLowerCase().includes(this.searchText.toLowerCase()) ||
-             card.titre.toLowerCase().includes(this.searchText.toLowerCase()) ||
-             card.id.toString().toLowerCase().includes(this.searchText.toLowerCase()) ||
-             card.localisation.toLowerCase().includes(this.searchText.toLowerCase());
-    });
+  filterCardes() {    
+    
+      this.filteredcards = this.stage.filter(card => {      
+        return card.description.toLowerCase().includes(this.searchText.toLowerCase()) ||
+               card.titre.toLowerCase().includes(this.searchText.toLowerCase()) ||
+               card.nomEntreprise.toLowerCase().includes(this.searchText.toLowerCase()) ||
+               card.dateDebut.toLowerCase().includes(this.searchText.toLowerCase()) ||
+               card.dateFin.toLowerCase().includes(this.searchText.toLowerCase()) ||
+               card.id.toString().toLowerCase().includes(this.searchText.toLowerCase()) ||
+               card.localisation.toLowerCase().includes(this.searchText.toLowerCase());
+      });
+    
+   
   }
 
-  handlePageEvent(e:PageEvent){
-    this.currentPageNumber = (e.pageIndex +1);
-    this.pageSize= e.pageSize;
-    this.filteredcards = [];
-    this.getStages()
+  onSearch() {
+    this.paginator.firstPage();
+    this.filterCardes();
   }
+
+  // handlePageEvent(e:PageEvent){
+  //   this.currentPageNumber = (e.pageIndex +1);
+  //   this.pageSize= e.pageSize;
+  //   this.filteredcards = [];
+  //   this.getStages()
+  // }
 
 
 
