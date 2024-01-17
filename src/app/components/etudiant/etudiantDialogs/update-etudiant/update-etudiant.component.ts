@@ -70,13 +70,13 @@ export class UpdateEtudiantComponent implements OnInit{
 
 }
 
-async edit() {
-  if (this.formModif.status === 'VALID') {
-    const student = this.formModif.value as unknown as Etudiant;
-    this.service.editStudent(this.editData.id, student).subscribe((student) => {
-      this.dialogRef.close(student);
-    });
+// async edit() {
+//   if (this.formModif.status === 'VALID') {
+//     const student = this.formModif.value as unknown as Etudiant;
+//     this.service.editStudent(this.editData.id, student).subscribe((student) => {
+//       this.dialogRef.close(student);
+//     });
 
-  }
-}
+//   }
+// }
 }

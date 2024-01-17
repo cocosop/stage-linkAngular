@@ -11,13 +11,13 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { AddEtudiantComponent } from '../etudiant/etudiantDialogs/add-etudiant/add-etudiant.component';
 import { DeleteEtudiantComponent } from '../etudiant/etudiantDialogs/delete-etudiant/delete-etudiant.component';
 import { UpdateEtudiantComponent } from '../etudiant/etudiantDialogs/update-etudiant/update-etudiant.component';
-import { ViewEtudiantComponent } from '../etudiant/etudiantDialogs/view-etudiant/view-etudiant.component';
+import { ViewEtudiantComponent } from '../../theme/shared/components/view-etudiant/view-etudiant.component';
 import { Entreprises } from './entreprises';
 import { EntreprisesService } from './entreprises.service';
 import AddentrepriseComponent from './entrepriseDialog/addentreprise/addentreprise.component';
 import { DeletentrepriseComponent } from './entrepriseDialog/deletentreprise/deletentreprise.component';
 import { UpdatentrepriseComponent } from './entrepriseDialog/updatentreprise/updatentreprise.component';
-import { ViewentrepriseComponent } from './entrepriseDialog/viewentreprise/viewentreprise.component';
+import { ViewentrepriseComponent } from '../../theme/shared/components/viewentreprise/viewentreprise.component';
 
 @Component({
   selector: 'app-entreprises',

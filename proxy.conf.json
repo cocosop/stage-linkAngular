@@ -1,0 +1,6 @@
+{
+    "/stage-link": {
+      "target": "http://localhost:8089",
+      "secure": false
+    }
+  }

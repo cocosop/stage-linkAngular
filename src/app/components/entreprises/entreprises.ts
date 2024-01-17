@@ -1,13 +1,13 @@
 export class Entreprises {
-    id!: number;
+  
     responsable!: string;
     nomEntreprise!: string;
     telephone!: string;
     email!: string;
     adresse!: string;
-    motDePasse!: string;
+    password!: string;
     dateInscription!: string;
     statut!:string;
-    role!:string;
-    stage!: string;
+    
+    
 }

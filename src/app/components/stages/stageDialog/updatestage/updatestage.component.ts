@@ -30,7 +30,7 @@ import { MatSelectModule } from '@angular/material/select';
 })
 export class UpdatestageComponent {
   formUpdate = new FormGroup({
-    titre: new FormControl('', [Validators.required, Validators.required]),
+    titreStage: new FormControl('', [Validators.required, Validators.required]),
     localisation: new FormControl('', [Validators.required, Validators.required]),
     description: new FormControl('', [Validators.required, Validators.required]),
   })
@@ -51,7 +51,7 @@ export class UpdatestageComponent {
   id: any;
   ngOnInit(): void {
     if (this.editData) {
-      this.formUpdate.controls['titre'].setValue(this.editData.titre)
+      this.formUpdate.controls['titre'].setValue(this.editData.titreStage)
       this.formUpdate.controls['localisation'].setValue(this.editData.localisation)
       this.formUpdate.controls['description'].setValue(this.editData.description)
     }

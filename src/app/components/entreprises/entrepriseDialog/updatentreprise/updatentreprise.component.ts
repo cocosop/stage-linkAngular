@@ -75,10 +75,11 @@ export class UpdatentrepriseComponent {
 async edit() {
   if (this.formModif.status === 'VALID') {
     const entreprise = this.formModif.value as unknown as Entreprises;
-    this.service.editEntreprise(this.editData.id, entreprise).subscribe((entreprise) => {
+    this.service.editEntreprise(entreprise).subscribe((entreprise) => {
       this.dialogRef.close(entreprise);
+      this.ngOnInit()
     });
-
+    
   }
 }
 }

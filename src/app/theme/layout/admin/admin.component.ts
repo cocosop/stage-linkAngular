@@ -3,7 +3,7 @@ import { Component, Inject, NgZone } from '@angular/core';
 import { Location, LocationStrategy } from '@angular/common';
 
 // Project import
-import { BerryConfig } from '../../../app-config';
+
 import { Navigation, NavigationItem } from './navigation/navigation';
 import StagesComponent from 'src/app/components/stages/stages.component';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -32,7 +32,7 @@ export class AdminComponent {
     private locationStrategy: LocationStrategy
   ) {
     this.navigation = this.nav.get();
-    this.berryConfig = BerryConfig;
+ 
 
     let current_url = this.location.path();
     const baseHref = this.locationStrategy.getBaseHref();
@@ -45,7 +45,7 @@ export class AdminComponent {
     }
 
     this.windowWidth = window.innerWidth;
-    this.navCollapsed = this.windowWidth >= 1025 ? BerryConfig.isCollapse_menu : false;
+    // this.navCollapsed = this.windowWidth >= 1025 ? BerryConfig.isCollapse_menu : false;
   }
 
   // public method
@@ -70,14 +70,14 @@ export class AdminComponent {
 
   }
 
-  save(): void {
-    if (this.formAdd.status === 'VALID') {
-      const stage = this.formAdd.value as unknown as StagesModel;
-      this.service.addStage(stage).subscribe((stage) => {
-        console.log(stage)
-        this.ngOnInit()
-      });
-    }
-  }
+  // save(): void {
+  //   if (this.formAdd.status === 'VALID') {
+  //     const stage = this.formAdd.value as unknown as StagesModel;
+  //     this.service.addStage(stage).subscribe((stage) => {
+  //       console.log(stage)
+  //       this.ngOnInit()
+  //     });
+  //   }
+  // }
 
 }

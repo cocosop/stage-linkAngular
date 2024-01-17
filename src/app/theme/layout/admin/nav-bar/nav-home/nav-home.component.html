@@ -9,32 +9,25 @@
       </div>
     </a>
     <div class="drill" >      
-        <button mat-button class="nav-item" style="color: blue;">
+        <button mat-button class="nav-item" style="color:rgb(61, 57, 58);">
           <a class="nav-link" href="/" routerLinkActive="active-link"
             >Home</a>
         </button>
 
-        <button mat-button class="nav-item" style="color: blue;" >
+        <button mat-button class="nav-item" style="color:rgb(61, 57, 58);" >
           <a class="nav-link" href="#section1" >
             Interships</a>
         </button>
 
-        <button mat-button class="nav-item" style="color: blue;">
+        <button mat-button class="nav-item" style="color:rgb(61, 57, 58);">
           <a class="nav-link" href="#section2" 
             >Contact</a>
         </button>
-        <button mat-button class="settings__profil" [matMenuTriggerFor]="menu" >
-              <mat-icon class="profil">person</mat-icon>
-              <mat-icon class="profil" >settings</mat-icon>
+        <button mat-button class="nav-item" style="color:rgb(61, 57, 58);">
+          <a class="nav-link" href="/login" 
+            >Sign In</a>
         </button>         
-         
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item><mat-icon matSuffix>person</mat-icon>My profil</button>
-            
-            <a href="/login/student" mat-menu-item ><mat-icon style="color: red;" matSuffix>exit_to_app</mat-icon><a style="color: red;">Logout</a></a>
-          </mat-menu>       
-      
-      
+        
     </div>
   </div>
 </nav>

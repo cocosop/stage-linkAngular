@@ -1,0 +1,91 @@
+<div class="login">
+    <img src="./../../../../../assets/img/login2.jpg" alt="image" class="login__bg" />
+  <div style="display: flex; flex-direction: row; justify-content: center; " >
+    <mat-card  class="login__form1 " style="border-radius: 20px 0px 0px 20px; ">
+      <mat-card-header>
+        <img src="./../../../../../assets/images/logo.png" alt="Illustration" style="width: 200px; height: 160px; margin-top: -80px; margin-left: 95px;">     
+      </mat-card-header>
+      <h1 style="margin-top: -5px; text-align: left; font-weight: 900;">Welcome to 
+        <br><p style="color: blue;font-size: 24px;">Stage Link</p>         
+      </h1>     
+      <mat-card-content>
+        <form style="margin-top: -20px;" [formGroup]="loginform" (ngSubmit)="proceedlogin()">
+          <div style="display: flex; flex-direction: row; ">
+            <mat-form-field   style="  margin-left: -18px; width: 1200px; height: 80px;">
+              <input matInput placeholder="Student Firstname" formControlName="nomEtudiant" >
+              <mat-icon matPrefix>person</mat-icon>           
+              <mat-error *ngIf="loginform.controls.nomEtudiant.hasError('required')"> Champ requis </mat-error>
+            </mat-form-field>
+            <mat-form-field style=" margin-left: 20px; width: 1200px;">
+              <input matInput placeholder="Student Lastname"  required formControlName="prenomEtudiant">
+              <mat-icon matPrefix>person</mat-icon>
+              <mat-error *ngIf="loginform.controls.prenomEtudiant.status === 'INVALID'"> Champ requis </mat-error>
+            </mat-form-field>
+          </div>        
+          <div style="display: flex; flex-direction: row;  ">
+            <mat-form-field  style="  margin-left: -18px; width: 1000px; height: 80px;">
+              <input matInput placeholder="Phone" formControlName="telephone" >
+              <mat-icon matPrefix>phone</mat-icon>           
+              <mat-error *ngIf="loginform.controls.telephone.hasError('required')"> Champ requis </mat-error>
+            </mat-form-field>
+            <mat-form-field style=" margin-left: 5px; width: 1000px;">
+              <input matInput placeholder="Adresse" type="text" required formControlName="adresse">
+              <mat-icon matPrefix>location_on</mat-icon>
+              <mat-error *ngIf="loginform.controls.adresse.status === 'INVALID'"> Champ requis </mat-error>
+            </mat-form-field>
+          </div>  
+          <div style="display: flex; flex-direction: row; ">
+            <mat-form-field  style="  margin-left: -18px; width: 1000px; height: 80px;">
+              <input matInput placeholder="Email" formControlName="email" >
+              <mat-icon matPrefix>email</mat-icon>
+              <mat-error *ngIf="loginform.controls.email.hasError('email') && !loginform.controls.email.hasError('required')">
+                Email incorrect
+              </mat-error>
+              <mat-error *ngIf="loginform.controls.email.hasError('required')"> Champ requis </mat-error>
+            </mat-form-field>
+            <mat-form-field style=" margin-left: 4px; width: 1000px;">
+              <input matInput placeholder="Password" type="password" required formControlName="password">
+              <mat-icon matPrefix>lock</mat-icon>
+              <mat-error *ngIf="loginform.controls.password.status === 'INVALID'"> Champ requis </mat-error>
+            </mat-form-field>
+            <mat-form-field  style="  margin-left: 3px; width: 1000px; height: 80px;">
+                <input matInput placeholder="Skills" formControlName="competences" >
+                <mat-icon matPrefix>phone</mat-icon>           
+                <mat-error *ngIf="loginform.controls.competences.hasError('required')"> Champ requis </mat-error>
+              </mat-form-field>
+          </div>  
+          <div style="display: flex; flex-direction: row;  ">            
+            <mat-form-field style=" margin-left: -16px; width: 1500px;">
+              <input matInput placeholder="academic background" type="text" required formControlName="parcoursAcademique">
+              <mat-icon matPrefix>location_on</mat-icon>
+              <mat-error *ngIf="loginform.controls.parcoursAcademique.status === 'INVALID'"> Champ requis </mat-error>
+            </mat-form-field>
+            <mat-form-field style=" margin-left: 4px; width: 1500px;">
+                <input matInput placeholder="center of interest" type="text" required formControlName="interets">
+                <mat-icon matPrefix>location_on</mat-icon>
+                <mat-error *ngIf="loginform.controls.interets.status === 'INVALID'"> Champ requis </mat-error>
+              </mat-form-field>
+          </div>                
+          
+          <!-- <div style="display: flex; flex-direction: row; ">
+            <mat-form-field  style="  margin-left: -18px; width: 1000px; height: 80px;">
+              <input matInput placeholder="Date inscription" formControlName="dateInscription"  readonly >
+              <mat-icon matPrefix>date</mat-icon>           
+              <mat-error *ngIf="loginform.controls.dateInscription.hasError('required')"> Champ requis </mat-error>
+            </mat-form-field>
+            <mat-form-field style=" margin-left: 5px; width: 1000px;">
+              <input matInput placeholder="Statut" type="text" formControlName="statut" readonly>
+              <mat-icon matPrefix>status</mat-icon>            
+            </mat-form-field>
+          </div>         -->
+          <button mat-raised-button  style="width: 100%; height: 50px; background-color: rgb(116, 116, 237); border-radius: 30px; margin-left: -10px; ">Register</button>
+        </form>
+      </mat-card-content>
+      <div class="login__register"> <br>Already have an account? <a href="/login" style="color: blue;">Signin here</a> </div>
+    </mat-card>
+    <mat-card  class="login__form1 " style="border-radius: 0px 20px 20px 0px;">   
+      <img style="margin-top: -100px;" src="./../../../../../assets/images/logo.png" alt="Illustration">
+      <img style="margin-top: -100px;" src="./../../../../../assets/img/stage.png" alt="Illustration">    
+    </mat-card>
+  </div>
+  

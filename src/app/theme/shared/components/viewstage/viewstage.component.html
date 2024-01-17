@@ -1,0 +1,19 @@
+
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{stage.titreStage}}</mat-card-title>
+          <mat-card-subtitle style="color: rgb(87, 157, 210)">{{stage.entreprise.email}}</mat-card-subtitle>
+          <mat-card-subtitle style="color: rgb(87, 157, 210)">{{stage.localisation}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-card-title>Détails du stage:</mat-card-title> 
+          <mat-card-subtitle style="color: rgb(87, 157, 210)">Date de début: {{stage.dateDebut}}</mat-card-subtitle> 
+          <p style="font-weight: 500; font-size: 16px;">Description du stage:</p> 
+          <p style="text-align: justify;">{{stage.description}} {{longText}} </p>        
+        </mat-card-content>  
+        <a href="/login"  style="margin-left: auto;"><button mat-flat-button style="width: 100px;background-color: rgb(87, 157, 210); margin-left: auto;" >Postuler</button></a>     
+      </mat-card>  
+      
+      
+  
+  

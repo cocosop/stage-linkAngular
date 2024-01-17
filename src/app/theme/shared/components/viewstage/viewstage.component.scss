@@ -1,0 +1,21 @@
+.idRegister{
+  display: flex;
+  flex-direction: row;
+  background-color: blue($color: #6577a7);
+  margin-top: -10px;
+}
+
+mat-card {
+  width: 100%;
+   display: flex; 
+   justify-content: center;
+   overflow: hidden;
+}
+
+@media screen and (max-width: 600px) {
+  mat-card  {
+    width: 50%;
+    display: flex; 
+    justify-content: center;
+    overflow: hidden;
+  }}

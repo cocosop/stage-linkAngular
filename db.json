@@ -454,6 +454,48 @@
       "motDePasse": "password3",
       "matricule": "MAT0",
       "id": 19
+    },
+    {
+      "nomEntreprise": "Sogeta",
+      "responsable": "Andrew Gaspin",
+      "email": "andrew.gaspin@sogeta.org",
+      "telephone": "06 91 76 69 38",
+      "adresse": "BATOURI",
+      "motDePasse": "fofopa",
+      "dateInscription": "15-02-2023",
+      "statut": "actif",
+      "matricule": "MAT0",
+      "id": 20
+    },
+    {
+      "nomEntreprise": "Sogeta",
+      "responsable": "Andrew Gaspin",
+      "email": "andrew.gaspin@sogeta.org",
+      "telephone": "06 91 76 69 38",
+      "adresse": "BATOURI",
+      "motDePasse": "fofopa",
+      "dateInscription": "15-02-2023",
+      "statut": "actif",
+      "matricule": "MAT1",
+      "id": 21
+    },
+    {
+      "nomEntreprise": "Sogeta",
+      "responsable": "Andrew Gaspin",
+      "email": "andrew.gaspin@sogeta.org",
+      "telephone": "06 91 76 69 38",
+      "adresse": "BATOURI",
+      "motDePasse": "fofopa",
+      "dateInscription": "15-02-2023",
+      "statut": "actif",
+      "matricule": "MAT2",
+      "id": 22
+    },
+    {
+      "email": "corinemanuella@yahoo.fr",
+      "motDePasse": "password",
+      "matricule": "MAT0",
+      "id": 23
     }
   ],
   "entreprise": [
@@ -880,6 +922,26 @@
       "email": "corinemanuella@yahoo.fr",
       "motDePasse": "password3",
       "id": 54
+    },
+    {
+      "email": "corinemanuella@yahoo.fr",
+      "motDePasse": "password3",
+      "id": 55
+    },
+    {
+      "email": "corinemanuella@yahoo.fr",
+      "motDePasse": "password3",
+      "id": 56
+    },
+    {
+      "email": "marie.durand@microsoft.com",
+      "motDePasse": "password456",
+      "id": 57
+    },
+    {
+      "email": "corinemanuella@yahoo.fr",
+      "motDePasse": "password123",
+      "id": 58
     }
   ]
 }

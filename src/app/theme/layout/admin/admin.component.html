@@ -1,20 +1,14 @@
 <app-nav-home></app-nav-home>
     <div class="coded-content">
-      <mat-tab-group class="tabs" style="background-color: rgb(234, 234, 235) ;max-height: 2000px; margin-top: 6px; max-width: 1400px;  margin-left: 50px;">
-        <mat-tab label="Add Intership" >
-         <app-card></app-card>
+      <mat-tab-group class="tabs" style="background-color: rgb(234, 234, 235) ;max-height: 2000px; margin-top: 6px; max-width: 1400px;  margin-left: 50px;">           
+        <mat-tab label="Mes Stages" >
+          <app-viewstageEntreprises></app-viewstageEntreprises>
         </mat-tab>
-        <div>
-          <mat-tab label="My Interships">
-
-          </mat-tab>
-        </div>
-
-        <mat-tab label="Postulation" >
-
-        </mat-tab>
-        <mat-tab label="My Profil">
-          <app-pentreprise style="margin-top: 15px;"></app-pentreprise>
+        <mat-tab label="Ajouter du stage" >
+          <app-card></app-card>
+         </mat-tab>
+        <mat-tab label="Profil de l'entreprise">
+          <app-viewentreprise style="margin-top: 15px;"></app-viewentreprise>
         </mat-tab>
       </mat-tab-group>
     </div>

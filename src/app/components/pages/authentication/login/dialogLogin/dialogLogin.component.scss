@@ -1,0 +1,38 @@
+.idRegister{
+    display: flex;
+    flex-direction: row;
+    background-color: blue($color: #6577a7);
+    margin-top: -10px;
+}
+
+
+.example-card {
+    color: rgb(0, 0, 0); /* Couleur initiale du lien */
+    font-size: 16px; /* Taille initiale du lien */
+    text-decoration: none; /* Enlever le soulignement du lien */
+    background-color: white;
+  }
+  
+  /* Définir le style du lien matcard lors du survol du curseur */
+  .example-card:hover {
+    animation-name: mon-animation; /* Nom de l'animation */
+    animation-duration: 0.2s; /* Durée du cycle d'animation */
+    animation-fill-mode: forwards; /* Garder le style final de l'animation */
+  }
+  
+  /* Définir les étapes du cycle d'animation */
+  @keyframes mon-animation {
+    from {
+      color: rgb(11, 11, 11); /* Couleur initiale du lien */
+      font-size: 16px; /* Taille initiale du lien */
+      background-color: white;
+      size: 100px;
+    }
+    to {
+        
+      color: rgb(247, 248, 249); /* Couleur finale du lien */
+      font-size: 24px; /* Taille finale du lien */
+      background-color: rgb(87, 157, 210);
+      size: 200px;
+    }
+  }

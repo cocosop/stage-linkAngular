@@ -1,0 +1,15 @@
+
+    <mat-card *ngFor="let item of stage" (click)="openDialog(item)">
+        <mat-card-header>
+          <mat-card-title>{{item.titreStage}}</mat-card-title>
+          <mat-card-subtitle style="color: rgb(87, 157, 210)">{{item.localisation}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-card-title>Détails du stage:</mat-card-title> 
+          <mat-card-subtitle style="color: rgb(87, 157, 210)">Date de début: {{item.dateDebut}}</mat-card-subtitle>         
+        </mat-card-content>  
+      </mat-card>  
+      
+      
+  
+  

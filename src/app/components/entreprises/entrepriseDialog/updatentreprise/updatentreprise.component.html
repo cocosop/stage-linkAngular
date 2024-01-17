@@ -5,9 +5,9 @@
 <div mat-dialog-content class="container">
     <form [formGroup]="formModif">
         <div class="form-fields" style="margin-top: 10px;">
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline" >
                 <mat-label>Nom de l'entreprise</mat-label>
-                <input matInput formControlName="nomEntreprise">
+                <input matInput formControlName="nomEntreprise" >
                 <mat-error *ngIf="formModif.controls.nomEntreprise.status ==='INVALID'">
                     Champ requis
                 </mat-error>

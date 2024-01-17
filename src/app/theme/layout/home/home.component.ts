@@ -1,11 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
-import { PageEvent } from '@angular/material/paginator';
 import { StagesModel } from 'src/app/components/stages/stages-model';
 import { StagesService } from 'src/app/components/stages/stages.service';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import {MatPaginator} from '@angular/material/paginator';
+import ViewstageComponent from 'src/app/theme/shared/components/viewstage/viewstage.component';
 
 @Component({
   selector: 'app-home',
@@ -30,22 +29,18 @@ export class HomeComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   constructor(private stageService: StagesService, public dialog: MatDialog, private route: ActivatedRoute){
     this.filteredcards = this.stage;
-
-
-
 }
+
   ngOnInit(): void {
-
   this.getStages();
- 
-
   }
-
   getStages(  ){
     this.stageService.get()
     .subscribe((Response)=>{
       this.stage = Response as StagesModel[];
       this.stage =this.stage.map(item=>{
+        localStorage.setItem('id', item.idStage+"");
+        console.log(item.idStage);
         const deuxSemaines = 1000 * 60 * 60 * 24 * 14;
         const dateString = item.dateDebut; // Assurez-vous que la date est correctement formatée
         const date = new Date(dateString).getTime();
@@ -80,11 +75,11 @@ export class HomeComponent implements OnInit {
     
       this.filteredcards = this.stage.filter(card => {      
         return card.description.toLowerCase().includes(this.searchText.toLowerCase()) ||
-               card.titre.toLowerCase().includes(this.searchText.toLowerCase()) ||
-               card.nomEntreprise.toLowerCase().includes(this.searchText.toLowerCase()) ||
+               card.titreStage.toLowerCase().includes(this.searchText.toLowerCase()) ||
+               card.entreprise.email.toLowerCase().includes(this.searchText.toLowerCase()) ||
                card.dateDebut.toLowerCase().includes(this.searchText.toLowerCase()) ||
                card.dateFin.toLowerCase().includes(this.searchText.toLowerCase()) ||
-               card.id.toString().toLowerCase().includes(this.searchText.toLowerCase()) ||
+               card.idStage.toString().toLowerCase().includes(this.searchText.toLowerCase()) ||
                card.localisation.toLowerCase().includes(this.searchText.toLowerCase());
       });
     
@@ -94,6 +89,12 @@ export class HomeComponent implements OnInit {
   onSearch() {
     this.paginator.firstPage();
     this.filterCardes();
+  }
+
+  openDialog(item) {
+    this.dialog.open(ViewstageComponent,{
+      data:item
+    });
   }
 
   // handlePageEvent(e:PageEvent){

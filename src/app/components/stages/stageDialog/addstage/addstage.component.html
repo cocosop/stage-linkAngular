@@ -3,13 +3,13 @@
 </div>
 <hr>
 <div mat-dialog-content class="container">
-    <form [formGroup]="formAdd" (ngSubmit)="save()">
+    <form [formGroup]="formAdd" >
         <div class="form-fields" style="margin-top: 10px;">
             <mat-form-field appearance="outline">
                 <mat-label>Title</mat-label>
-                <input matInput formControlName="titre">
+                <input matInput formControlName="titreStage">
                 <i class="ti ti-user"></i>
-                <mat-error *ngIf="formAdd.controls.titre.status ==='INVALID'">
+                <mat-error *ngIf="formAdd.controls.titreStage.status ==='INVALID'">
                     Champ requis
                 </mat-error>
             </mat-form-field>
@@ -33,8 +33,8 @@
     </form>
 </div>
 <div mat-dialog-actions class="form-buttons">
-    <button mat-raised-button style="color: #162E58;" (click)="save()">
+    <!-- <button mat-raised-button style="color: #162E58;" (click)="save()">
         Enregistrer
-    </button>
+    </button> -->
     <button mat-raised-button color="warn" (click)="onNoClick()">Annuler</button>
 </div>

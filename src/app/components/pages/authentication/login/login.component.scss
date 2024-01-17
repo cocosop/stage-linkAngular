@@ -56,19 +56,25 @@ img {
   object-fit: cover;
   object-position: center;
 }
-
-.login__form {
-  position: relative;
-  margin-inline: 1.5rem;
- max-width: 100%;
-  background-color: hsla(0, 0%, 100%, .01);
-  border: 2px solid hsla(0, 0%, 100%, .7);
-  padding: 2.5rem 1rem;
-  color: var(--white-color);
-  border-radius: 1rem;
-  backdrop-filter: blur(16px);
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex .mat-form-field-infix {
+  border: 2px solid red;
 }
 
+.login__form {
+  position: relative;  
+  max-width: 700px;   
+  padding: 2.5rem 1rem;
+  backdrop-filter: blur(18px);
+}
+.login__form1 {
+ 
+  position: relative;  
+  max-width: 400px;
+  background-color: transparent;  
+  padding: 2.5rem 1rem;  
+ 
+  margin-left: 0px;
+}
 .login__title {
   text-align: center;
   font-size: var(--h1-font-size);

@@ -1,84 +1,36 @@
-<div class="login">
-  <img src="./../../../../../assets/img/login-bg.png" alt="image" class="login__bg" />
-<div style="display: flex; flex-direction: row;">
- <form action="" class="login__form" [formGroup]="loginform" (ngSubmit)="proceedlogin()">
-    <h1 class="login__title"
-      ><h2>{{ usertype }} Login</h2></h1
-    >
-
-    <div class="login__inputs">
-      <div >
-        <mat-form-field appearance="outline">
-          <mat-label>Email</mat-label>
-          <input class="login__input" matInput formControlName="email" />
-          <mat-icon matPrefix>mail</mat-icon>
-          <mat-error *ngIf="loginform.controls.email.hasError('email') && !loginform.controls.email.hasError('required')">
-            Email incorrect
-          </mat-error>
-          <mat-error *ngIf="loginform.controls.email.hasError('required')"> Champ requis </mat-error>
-        </mat-form-field>
-      </div>
-      <div >
-        <mat-form-field appearance="outline">
-          <mat-label>Mot de Passe</mat-label>
-          <input class="login__input" matInput formControlName="motDePasse" />
-          <mat-icon>lock</mat-icon>
-          <mat-error *ngIf="loginform.controls.motDePasse.status === 'INVALID'"> Champ requis </mat-error>
-        </mat-form-field>
-      </div>
-    </div>
-
-    <div class="login__check">
-      <div class="login__check-box">
-        <input type="checkbox" class="login__check-input" id="user-check" />
-        <label for="user-check" class="login__check-label">Remember me</label>
-      </div>
-      <a href="#" class="login__forgot">Forgot Password?</a>
-    </div>
-
-    <button mat-raised-button class="login__button" color="primary">Login</button>
-    <div class="login__register"> Don't have an account? <a href="#">Register</a> </div>
-  </form>
-  
-  <form action="" class="login__form" [formGroup]="loginform" (ngSubmit)="proceedlogin()">
-    <h1 class="login__title"
-      ><h2>{{ usertype }} Login</h2></h1
-    >
-
-    <div class="login__inputs">
-      <div >
-        <mat-form-field appearance="outline">
-          <mat-label>Email</mat-label>
-          <input class="login__input" matInput formControlName="email" />
-          <mat-icon matPrefix>mail</mat-icon>
-          <mat-error *ngIf="loginform.controls.email.hasError('email') && !loginform.controls.email.hasError('required')">
-            Email incorrect
-          </mat-error>
-          <mat-error *ngIf="loginform.controls.email.hasError('required')"> Champ requis </mat-error>
-        </mat-form-field>
-      </div>
-      <div >
-        <mat-form-field appearance="outline">
-          <mat-label>Mot de Passe</mat-label>
-          <input class="login__input" matInput formControlName="motDePasse" />
-          <mat-icon>lock</mat-icon>
-          <mat-error *ngIf="loginform.controls.motDePasse.status === 'INVALID'"> Champ requis </mat-error>
-        </mat-form-field>
-      </div>
-    </div>
-    <div class="login__check">
-      <div class="login__check-box">
-        <input type="checkbox" class="login__check-input" id="user-check" />
-        <label for="user-check" class="login__check-label">Remember me</label>
-      </div>
-      <a href="#" class="login__forgot">Forgot Password?</a>
-    </div>
-
-    <button mat-raised-button class="login__button" color="primary">Login</button>
-    <div class="login__register"> Don't have an account? <a href="#">Register</a> </div>
-  </form>
+<div class="login"> 
+  <img src="./../../../../../assets/img/login2.jpg" alt="image" class="login__bg" />
+<div style="display: flex; flex-direction: row; justify-content: center; " >
+  <div class="login__form1 " style="border-radius: 20px 0px 0px 20px; ">    
+    <h1 style="margin-top: 100px; font-weight: 900;">Welcome to 
+      <br><p style="color: rgb(87, 157, 210);font-size: 24px;">Stage Link</p></h1>             
+    <h5 style=" margin-top: -10px; color:rgb(61, 57, 58);">Sign into your account below</h5>
+    <mat-card-content>
+      <form style="margin-top: 30px;" [formGroup]="loginform" (ngSubmit)="proceedlogin()">
+        <div style="display: flex; flex-direction: column; ">
+          <mat-form-field   style="width: 300px; border-radius: 25px; margin-left: -18px;">
+            <input matInput placeholder="Email" formControlName="email" >
+            <mat-icon matPrefix>email</mat-icon>
+            <mat-error *ngIf="loginform.controls.email.hasError('email') && !loginform.controls.email.hasError('required')">
+              Email incorrect
+            </mat-error>
+            <mat-error *ngIf="loginform.controls.email.hasError('required')"> Champ requis </mat-error>
+          </mat-form-field>
+          <mat-form-field style="margin-top: 20px;margin-left: -18px;">
+            <input matInput placeholder="Password" type="password" required formControlName="password">
+            <mat-icon matPrefix>lock</mat-icon>
+            <mat-error *ngIf="loginform.controls.password.status === 'INVALID'"> Champ requis </mat-error>
+          </mat-form-field>
+        </div>        
+        <button mat-raised-button  style="width: 100%; height: 50px; background-color: rgb(87, 157, 210); border-radius: 30px; margin-left: -10px; margin-top: 28px; ">
+          Login</button>
+      </form>
+    </mat-card-content>
+    <div class="login__register"> <br>Don't have an account? <a (click)="openDialog()" style="cursor: pointer; color: rgb(87, 157, 210)">Register here</a> </div>
+    <div class="login__register">  <a href="/" style="color: rgb(87, 157, 210);">Return to home page</a> </div>
+  </div>
+  <div  class="login__form1 " style="border-radius: 0px 20px 20px 0px;">   
+    <img src="./../../../../../assets/images/logo.png" alt="Illustration">
+    <img style="margin-top: -30px;" src="./../../../../../assets/img/stage.png" alt="Illustration">    
+  </div>
 </div>
-
-</div>
-
-

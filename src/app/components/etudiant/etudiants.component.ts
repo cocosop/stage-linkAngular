@@ -1,4 +1,4 @@
-import { ViewEtudiantComponent } from './etudiantDialogs/view-etudiant/view-etudiant.component';
+import { ViewEtudiantComponent } from '../../theme/shared/components/view-etudiant/view-etudiant.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
@@ -33,7 +33,7 @@ import { DeleteEtudiantComponent } from './etudiantDialogs/delete-etudiant/delet
   ]
 })
 export default class EtudiantsComponent implements OnInit {
-  displayedColumns: any[] = [ "id", "name", "prenom", "matricule", "competences", "telephone", "email",  "statut", 'actions'];
+  displayedColumns: any[] = [ "id", "name", "prenom", "matricule", "competences", "telephone", "email",  "statut", 'actions', 'password'];
   dataSource: MatTableDataSource<Etudiant>;
 
 
@@ -61,7 +61,7 @@ export default class EtudiantsComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
+  
   openDialogAdd(): void {
     this.dialog.open(AddEtudiantComponent, {
       width: '550px',

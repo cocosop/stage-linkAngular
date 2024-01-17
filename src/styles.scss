@@ -12,6 +12,7 @@ File: style.css
 @import 'scss/settings/preset-variables';
 @import 'node_modules/bootstrap/scss/functions';
 @import 'node_modules/bootstrap/scss/variables';
+
 $pc-body-bg: map-get($preset-colors, 'preset-1', 'body');
 $pc-blue: map-get($preset-colors, 'preset-1', 'primary');
 $pc-secondary: map-get($preset-colors, 'preset-1', 'secondary');

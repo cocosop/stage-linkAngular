@@ -1,63 +1,64 @@
-<div class="auth-main">
-  <div class="auth-wrapper v3">
-    <div class="auth-form">
-      <div class="card mt-5">
-        <div class="card-body">
-          <a href="javascript:" class="d-flex justify-content-center mt-3">
-            <img src="assets/images/logo-dark.svg" />
-          </a>
-          <div class="row">
-            <div class="d-flex justify-content-center">
-              <div class="auth-header">
-                <h2 class="text-secondary mt-5"><b>Sign up</b></h2>
-                <p class="fs-4 mt-2">Enter your credentials to continue</p>
-              </div>
-            </div>
-          </div>
-          <button type="button" class="btn mt-2 btn-light-primary bg-light text-muted" style="width: 100%">
-            <img src="assets/images/authentication/google-icon.svg" />Sign Up With Google
-          </button>
-          <div class="saprator mt-3">
-            <span>or</span>
-          </div>
-          <h5 class="my-4 d-flex justify-content-center"> Sign Up with Email address </h5>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-                <label for="floatingInput">First Name</label>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-                <label for="floatingInput">Last Name</label>
-              </div>
-            </div>
-          </div>
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-            <label for="floatingInput">Email Address / Username</label>
-          </div>
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-            <label for="floatingInput">Password</label>
-          </div>
-          <div class="form-check mt-3s">
-            <input class="form-check-input input-primary" type="checkbox" id="customCheckc1" checked="" />
-            <label class="form-check-label" for="customCheckc1">
-              <h5>Agree with <span>Terms & Condition.</span></h5>
-            </label>
-          </div>
-          <div class="d-grid mt-4">
-            <button type="button" class="btn btn-secondary p-2">Sign Up</button>
-          </div>
-          <hr />
-          <h5 class="d-flex justify-content-center">
-            <a [routerLink]="['/guest/login']"> Already have an account? </a>
-          </h5>
-        </div>
-      </div>
+<div class="login">
+  <img src="./../../../../../assets/img/login2.jpg" alt="image" class="login__bg" />
+<div style="display: flex; flex-direction: row; justify-content: center; " >
+  <div  class="login__form1 " style="border-radius: 20px 0px 0px 20px; ">    
+    <h1 style="margin-top: 0px; text-align: left; font-weight: 900; font-size: 50px;">Welcome to 
+      <br><p style="color: rgb(87, 157, 210);font-size: 24px; font-size: 40px;margin-top: 10px;">Stage Link</p> 
+    </h1> 
+      <form style="margin-top: 5px;" [formGroup]="loginform" (ngSubmit)="proceedlogin()">
+        <div style="display: flex; flex-direction: column; ">
+          <mat-form-field   style="   width: 500px; height: 80px;">
+            <input matInput placeholder="Company name" formControlName="nomEntreprise" >
+            <mat-icon matPrefix>business</mat-icon>           
+            <mat-error *ngIf="loginform.controls.nomEntreprise.hasError('required')"> Champ requis </mat-error>
+          </mat-form-field>
+          <mat-form-field style=" width: 500px; margin-top: -15px;">
+            <input matInput placeholder="Internship Manager"  required formControlName="responsable">
+            <mat-icon matPrefix>person</mat-icon>
+            <mat-error *ngIf="loginform.controls.responsable.status === 'INVALID'"> Champ requis </mat-error>
+          </mat-form-field>  
+          <mat-form-field  style="  width: 500px; height: 80px;margin-top: -15px;">
+            <input matInput placeholder="Phone" formControlName="telephone" >
+            <mat-icon matPrefix>phone</mat-icon>           
+            <mat-error *ngIf="loginform.controls.telephone.hasError('required')"> Champ requis </mat-error>
+          </mat-form-field>
+          <mat-form-field style="  width: 500px;margin-top: -15px;">
+            <input matInput placeholder="Adresse" type="text" required formControlName="adresse">
+            <mat-icon matPrefix>location_on</mat-icon>
+            <mat-error *ngIf="loginform.controls.adresse.status === 'INVALID'"> Champ requis </mat-error>
+          </mat-form-field>       
+          <mat-form-field  style="  width: 500px; height: 80px;margin-top: -15px;">
+            <input matInput placeholder="Email" formControlName="email" >
+            <mat-icon matPrefix>email</mat-icon>
+            <mat-error *ngIf="loginform.controls.email.hasError('email') && !loginform.controls.email.hasError('required')">
+              Email incorrect
+            </mat-error>
+            <mat-error *ngIf="loginform.controls.email.hasError('required')"> Champ requis </mat-error>
+          </mat-form-field>
+          <mat-form-field style="  width: 500px;margin-top: -15px;">
+            <input matInput placeholder="Password" type="password" required formControlName="password">
+            <mat-icon matPrefix>lock</mat-icon>
+            <mat-error *ngIf="loginform.controls.password.status === 'INVALID'"> Champ requis </mat-error>
+          </mat-form-field>
+        </div> 
+        <!-- <div style="display: flex; flex-direction: row; ">
+          <mat-form-field  style="  margin-left: -18px; width: 1000px; height: 80px;">
+            <input matInput placeholder="Date inscription" formControlName="dateInscription"  readonly >
+            <mat-icon matPrefix>date</mat-icon>           
+            <mat-error *ngIf="loginform.controls.dateInscription.hasError('required')"> Champ requis </mat-error>
+          </mat-form-field>
+          <mat-form-field style=" margin-left: 5px; width: 1000px;">
+            <input matInput placeholder="Statut" type="text" formControlName="statut" readonly>
+            <mat-icon matPrefix>status</mat-icon>            
+          </mat-form-field>
+        </div>         -->
+        <button mat-raised-button  style="width: 100%; height: 50px; background-color: rgb(87, 157, 210); border-radius: 30px; margin-left: 10px; ">Register</button>
+      </form>
+    
+    <div class="login__register"> <br>Already have an account? <a href="/login" style="color: rgb(87, 157, 210);">Signin here</a> </div>
     </div>
+  <div class="login__form1 " style="border-radius: 0px 20px 20px 0px;">   
+    <img style="margin-top: -100px;" src="./../../../../../assets/images/logo.png" alt="Illustration">
+    <img style="margin-top: -100px;" src="./../../../../../assets/img/stage.png" alt="Illustration">    
   </div>
 </div>

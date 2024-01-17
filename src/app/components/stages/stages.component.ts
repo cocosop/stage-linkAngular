@@ -59,11 +59,11 @@ export default class StagesComponent implements OnInit{
   filterCardes() {
     this.filteredcards = this.stage.filter(card => {
       return card.description.toLowerCase().includes(this.searchText.toLowerCase()) ||
-             card.titre.toLowerCase().includes(this.searchText.toLowerCase()) ||
-             card.nomEntreprise.toLowerCase().includes(this.searchText.toLowerCase()) ||
+             card.titreStage.toLowerCase().includes(this.searchText.toLowerCase()) ||
+             card.entreprise.email.toLowerCase().includes(this.searchText.toLowerCase()) ||
              card.dateDebut.toLowerCase().includes(this.searchText.toLowerCase()) ||
              card.dateFin.toLowerCase().includes(this.searchText.toLowerCase()) ||
-             card.id.toString().toLowerCase().includes(this.searchText.toLowerCase()) ||
+             card.idStage.toString().toLowerCase().includes(this.searchText.toLowerCase()) ||
              card.localisation.toLowerCase().includes(this.searchText.toLowerCase());
     });
   }

@@ -2,15 +2,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
-// project import
-import { BreadcrumbModule, CardModule, PentrepriseModule} from './components';
-
+import { BreadcrumbModule, CardModule, PentrepriseModule, ViewEtudiantModule} from './components';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { NgScrollbarModule } from 'ngx-scrollbar';
-
-// bootstrap import
 import { NgbDropdownModule, NgbNavModule, NgbModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -18,8 +12,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
-
-
+import { petudiantModule } from './components/petudiant/petudiant.module';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   imports: [
@@ -50,6 +44,8 @@ import { MatSelectModule } from '@angular/material/select';
     BreadcrumbModule,
     SpinnerComponent,
     PentrepriseModule,
+    petudiantModule,
+    ViewEtudiantModule,
     NgbModule,
     NgbDropdownModule,
     NgbNavModule,
@@ -61,6 +57,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatCardModule
 
 
   ],

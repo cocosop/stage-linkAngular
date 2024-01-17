@@ -1,13 +1,15 @@
-export class Etudiant {
-    id!: number;
-    name!: string;
-    prenom!: string;
-    matricule!: string;
+export class Etudiant {    
+    nomEtudiant!: string;
+    prenomEtudiant!: string;
     competences!: string;
+    parcoursAcademique!:string;
+    interets!:string;
     telephone!: string;
+    adresse!:string;
     email!: string;
-    motDePasse!: string;
-    role!:string;
-    statut!: string;
+    password!: string;
+    dateInscription!: string;
+    cv!:string  
+
 
 }

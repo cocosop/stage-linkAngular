@@ -1,0 +1,97 @@
+<div class="form_class">
+    <form class="example-form" [formGroup]="userForm" (ngSubmit)="edit()">
+        <h1>Company Profile</h1>
+        <mat-form-field class="example-full-width">
+            <mat-label>Nom </mat-label>
+            <input matInput formControlName="nomEtudiant">
+            <mat-icon matSuffix>person</mat-icon>
+            <!-- <mat-error *ngIf="userForm.controls.nomEntreprise.status ==='INVALID'">
+            Champ requis
+        </mat-error> -->
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Prenom</mat-label>
+            <input matInput formControlName="prenomEtudiant">
+            <mat-icon matSuffix>person</mat-icon>
+            <!-- <mat-error *ngIf="userForm.controls.responsable.status ==='INVALID'">
+            Champ requis
+        </mat-error> -->
+        </mat-form-field>
+        <div style="display: flex; flex-direction: row;">
+            <mat-form-field style="width: 500px;">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+                <mat-icon matSuffix>email</mat-icon>
+                <!-- <mat-error *ngIf="userForm.controls.email.status ==='INVALID'">
+          Champ requis
+      </mat-error> -->
+            </mat-form-field>
+            <mat-form-field style="width: 500px; margin-left: 10px;">
+                <mat-label>Telephone</mat-label>
+                <input matInput formControlName="telephone">
+                <mat-icon matSuffix>phone</mat-icon>
+                <!-- <mat-error *ngIf="userForm.controls.telephone.status ==='INVALID'">
+          Champ requis
+      </mat-error> -->
+            </mat-form-field>
+        </div>
+        <div style="display: flex; flex-direction: row;">
+            <mat-form-field style="width: 500px;">
+                <mat-label>parcoursAcademique</mat-label>
+                <input matInput formControlName="parcoursAcademique">
+                <mat-icon matSuffix>email</mat-icon>
+                <!-- <mat-error *ngIf="userForm.controls.parcoursAcademique.status ==='INVALID'">
+                Champ requis
+            </mat-error> -->
+            </mat-form-field>
+            <mat-form-field style="width: 500px; margin-left: 10px;">
+                <mat-label>competences</mat-label>
+                <input matInput formControlName="competences">
+                <mat-icon matSuffix>phone</mat-icon>
+                <!-- <mat-error *ngIf="userForm.controls.competences.status ==='INVALID'">
+                Champ requis
+            </mat-error> -->
+            </mat-form-field>
+        </div>
+        <div style="display: flex; flex-direction: row;">
+            <mat-form-field style="width: 500px;">
+                <mat-label>interets</mat-label>
+                <input matInput formControlName="interets">
+                <mat-icon matSuffix>email</mat-icon>
+                <!-- <mat-error *ngIf="userForm.controls.interets.status ==='INVALID'">
+                Champ requis
+            </mat-error> -->
+            </mat-form-field>
+            <mat-form-field style="width: 500px; margin-left: 10px;">
+                <mat-label>cv</mat-label>
+                <input matInput formControlName="cv">
+                <mat-icon matSuffix>phone</mat-icon>
+                <!-- <mat-error *ngIf="userForm.controls.cv.status ==='INVALID'">
+                Champ requis
+            </mat-error> -->
+            </mat-form-field>
+        </div>
+        <div style="display: flex; flex-direction: row;">
+            <mat-form-field style="width: 500px; margin-left: 10px;">
+                <mat-label>Adresse</mat-label>
+                <mat-icon matSuffix>location_on</mat-icon>
+                <input matInput formControlName="adresse">
+                <!-- <mat-error *ngIf="userForm.controls.adresse.status ==='INVALID'">
+            Champ requis
+        </mat-error> -->
+            </mat-form-field>
+            <mat-form-field style="width: 500px; margin-left: 15px;">
+                <mat-label>Mot de Passe</mat-label>
+                <input matInput formControlName="password">
+                <mat-icon matSuffix>vpn_key</mat-icon>
+                <!-- <mat-error *ngIf="userForm.controls.password.status ==='INVALID'">
+              Champ requis
+          </mat-error> -->
+            </mat-form-field>
+        </div>
+        <div class="example-button-row">
+            <button mat-raised-button color="primary" (click)="edit()">Update</button>
+            <button mat-raised-button color="warn" type="reset" class="btn" (click)="onNoClick()">Cancel</button>
+        </div>
+    </form>
+</div>

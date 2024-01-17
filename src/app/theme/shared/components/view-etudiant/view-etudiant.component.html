@@ -1,0 +1,52 @@
+<div>
+  <div>
+    <mat-card class="improfil">
+      
+    </mat-card>
+  </div>
+  <div >
+    <mat-card >
+      <h3>Profil de {{data.nomEtudiant}}  {{data.prenomEtudiant}}</h3>
+  <mat-list >
+    <div style="display: flex; flex-direction: row;">
+      <mat-list-item>
+        <span matListItemTitle>Nom</span>
+        <span matListItemLine>{{data.nomEtudiant}}</span>
+      </mat-list-item>
+      <mat-list-item>
+        <span matListItemTitle>Prenom</span>
+        <span>{{data.prenomEtudiant}}</span>
+      </mat-list-item>
+    </div>
+    <div style="display: flex; flex-direction: row;">
+      <mat-list-item>
+        <span matListItemTitle>Telephone</span>
+        {{data.telephone}}
+      </mat-list-item>
+      <mat-list-item>
+        <span matListItemTitle>Email</span>
+        {{data.email}}
+      </mat-list-item>
+    </div>
+    <div style="display: flex; flex-direction: row;">
+     <mat-list-item>
+        <span matListItemTitle>Compétences</span>
+        {{data.competences}}
+      </mat-list-item>
+      <mat-list-item>
+        <span matListItemTitle>Adresse</span>
+        {{data.adresse}}
+      </mat-list-item>
+      <mat-list-item>
+        <span matListItemTitle>CV</span>
+        {{data.cv}}
+      </mat-list-item>
+    </div>
+    
+  </mat-list>
+  
+  </mat-card >
+  <button mat-button color="primary" (click)="openDialog()">modifer le profil </button>
+  </div>
+  
+</div>

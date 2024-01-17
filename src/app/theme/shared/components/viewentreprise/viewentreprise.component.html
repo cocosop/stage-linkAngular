@@ -1,0 +1,42 @@
+<div >
+    <mat-card >    
+      <h2 style="font-weight: 600;">Profil de   </h2><h2 style="color: rgb(96, 96, 241); font-weight: 600;">{{data.nomEntreprise}}</h2>
+  <mat-list>
+    <div style="display: flex; flex-direction: row;">
+      <mat-list-item>
+        <span matListItemTitle>Nom Entreprise</span>
+        <span matListItemLine>{{data.nomEntreprise}}</span>
+      </mat-list-item>
+      <mat-list-item>
+        <span matListItemTitle>Responsable stage</span>
+        <span>{{data.responsable}}</span>
+      </mat-list-item>
+    </div>
+    <div style="display: flex; flex-direction: row;">
+      <mat-list-item>
+        <span matListItemTitle>Telephone</span>
+        {{data.telephone}}
+      </mat-list-item>
+      <mat-list-item>
+        <span matListItemTitle>Email</span>
+        {{data.email}}
+      </mat-list-item>    
+    </div>
+    <div style="display: flex; flex-direction: row;">
+      <mat-list-item>
+        <span matListItemTitle>Adresse</span>
+        {{data.adresse}}
+      </mat-list-item>
+      <mat-list-item>
+        <span matListItemTitle>Date inscription</span>
+        {{data.dateInscription}}
+      </mat-list-item>  
+    </div>  
+    <mat-list-item>
+      <span matListItemTitle>Statut</span>
+      {{data.statut}}
+    </mat-list-item>
+  </mat-list>
+  <button mat-button color="primary" (click)="openDialog()">modifer le profil </button>
+  </mat-card >
+  </div>

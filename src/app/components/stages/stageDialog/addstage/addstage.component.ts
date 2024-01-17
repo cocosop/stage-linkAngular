@@ -39,7 +39,7 @@ import { MatCard, MatCardModule } from '@angular/material/card';
 })
 export default class AddstageComponent implements OnInit{
   formAdd = new FormGroup({
-    titre: new FormControl('', [Validators.required, Validators.required]),
+    titreStage: new FormControl('', [Validators.required, Validators.required]),
     localisation: new FormControl('', [Validators.required, Validators.required]),
     description: new FormControl('', [Validators.required, Validators.required]),
   })
@@ -56,15 +56,15 @@ export default class AddstageComponent implements OnInit{
   onNoClick(): void {
     this.dialogRef.close();
   }
-  save(): void {
-    if (this.formAdd.status === 'VALID') {
-      const stage = this.formAdd.value as unknown as StagesModel;
-      this.service.addStage(stage).subscribe((stage) => {
-        console.log(stage)
-        this.dialogRef.close(stage);
-        this.ngOnInit()
-      });
-    }
-  }
+  // save(): void {
+  //   if (this.formAdd.status === 'VALID') {
+  //     const stage = this.formAdd.value as unknown as StagesModel;
+  //     this.service.addStage(stage).subscribe((stage) => {
+  //       console.log(stage)
+  //       this.dialogRef.close(stage);
+  //       this.ngOnInit()
+  //     });
+  //   }
+  // }
 
 }

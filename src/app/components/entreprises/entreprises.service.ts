@@ -19,13 +19,20 @@ export class EntreprisesService {
   getEntreprise(id: any): Observable<Entreprises> {
     return this.http.get<Entreprises>(`${this.BASE_URL}/${id}`)
   }
+  getEntrepriseEmail(email: string): Observable<Entreprises> {
+    return this.http.get<Entreprises>(`http://localhost:8089/stage-link/api/v1/entreprises/recuperer/${email}`)
+  }
   deleteEntreprise(id: any): Observable<Entreprises> {
     return this.http.delete<Entreprises>(`${this.BASE_URL}/${id}`)
   }
   addEntreprise(entreprise: Entreprises): Observable<Entreprises> {
-    return this.http.post<Entreprises>(`${"http://localhost:3000/entreprise"}`, entreprise)
+    return this.http.post<Entreprises>(`${"http://localhost:8089/stage-link/api/v1/entreprises/ajouter"}`, entreprise)
   }
-  editEntreprise(id: any, entreprise: Entreprises): Observable<Entreprises> {
-    return this.http.put<Entreprises>(`${this.BASE_URL}/${id}`, entreprise)
+  editEntreprise(entreprise: Entreprises): Observable<Entreprises> {
+    return this.http.put<Entreprises>(`http://localhost:8089/stage-link/api/v1/entreprises/modifier`, entreprise)
+  }
+ 
+  editEntrepriseEmail(email: any, entreprise: Entreprises): Observable<Entreprises> {
+    return this.http.put<Entreprises>(`${this.BASE_URL}/${email}`, entreprise)
   }
 }
